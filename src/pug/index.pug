@@ -8,7 +8,7 @@ html(lang='en')
         meta(name='description', content='')
         meta(name='author', content='')
 
-        title Resume - Start Bootstrap Theme
+        title Resume
 
         link(rel='icon', type='image/x-icon', href='assets/img/favicon.ico')
 
@@ -27,9 +27,9 @@ html(lang='en')
         // Navigation
         nav#sideNav.navbar.navbar-expand-lg.navbar-dark.bg-primary.fixed-top
             a.navbar-brand.js-scroll-trigger(href='#page-top')
-                span.d-block.d-lg-none Clarence Taylor
+                span.d-block.d-lg-none Fernando Gutierrez Romo
                 span.d-none.d-lg-block
-                    img.img-fluid.img-profile.rounded-circle.mx-auto.mb-2(src='assets/img/profile.jpg', alt='...')
+                    img.img-fluid.img-profile.rounded-circle.mx-auto.mb-2(src='assets/img/profile.png', alt='...')
             button.navbar-toggler(type='button', data-bs-toggle='collapse', data-bs-target='#navbarResponsive', aria-controls='navbarResponsive', aria-expanded='false', aria-label='Toggle navigation')
                 span.navbar-toggler-icon
             #navbarResponsive.collapse.navbar-collapse
@@ -40,6 +40,8 @@ html(lang='en')
                         a.nav-link.js-scroll-trigger(href='#experience') Experience
                     li.nav-item
                         a.nav-link.js-scroll-trigger(href='#education') Education
+                    li.nav-item
+                        a.nav-link.js-scroll-trigger(href='#languages') Languages
                     li.nav-item
                         a.nav-link.js-scroll-trigger(href='#skills') Skills
                     li.nav-item
@@ -54,22 +56,24 @@ html(lang='en')
             section#about.resume-section
                 .resume-section-content
                     h1.mb-0
-                        | Clarence 
-                        span.text-primary Taylor
+                        | Gutierrez Romo
+                        span.text-primary Fernando
                     .subheading.mb-5
-                        | 3542 Berry Street · Cheyenne Wells, CO 80810 · (317) 585-8468 · 
-                        a(href='mailto:name@email.com') name@email.com
+                        | 4064 Josefa Ortiz de Dominguez · Guadalajara, Jalisco, Mexico, CO 44820 · (+52) 3317466638 · 
+                        a(href='mailto:fernandogromo517@gmail.com') fernandogromo517@gmail.com
                     p.lead.mb-5
-                        | I am experienced in leveraging agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition.
+                        | Software Engineer with experience in backend development, mobile applications, and scalable architectures.
+                        | Proficient in Golang, .NET Core, and Docker, with a strong background working in Agile environments. Focused on
+                        | delivering efficient, maintainable, and reliable solutions.
                     .social-icons
-                        a.social-icon(href='#!')
+                        a.social-icon(href='https://www.linkedin.com/in/fernando-g-831355208/')
                             i.fab.fa-linkedin-in
-                        a.social-icon(href='#!')
+                        a.social-icon(href='https://github.com/ferho20u12')
                             i.fab.fa-github
-                        a.social-icon(href='#!')
-                            i.fab.fa-twitter
-                        a.social-icon(href='#!')
-                            i.fab.fa-facebook-f
+                        //- a.social-icon(href='#!')
+                        //-     i.fab.fa-twitter
+                        //- a.social-icon(href='#!')
+                        //-     i.fab.fa-facebook-f
 
             hr.m-0
 
@@ -80,40 +84,42 @@ html(lang='en')
 
                     .d-flex.flex-column.flex-md-row.justify-content-between.mb-5
                         .flex-grow-1
-                            h3.mb-0 Senior Web Developer
-                            .subheading.mb-3 Intelitec Solutions
-                            p
-                                | Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day, going forward, a new normal that has evolved from generation X is on the runway heading towards a streamlined cloud solution. User generated content in real-time will have multiple touchpoints for offshoring.
+                            h3.mb-0 Junior Software Developer
+                            .subheading.mb-3 Núcleo de Diagnóstico                        
+                            ul
+                                li Developed a REST API in Go (Golang) to allow patients to securely access test results, integrating with Bootmaker for WhatsApp and the official website. Centralized patient information, studies, and laboratory areas.
+                                li Built a sample processing system in C# (.NET Core 8, MVP pattern) that automatically grouped laboratory studies, areas, and analytes from SIAN orders, generating labeled outputs to streamline laboratory workflows.
+                                li Contributed to the development of SIAN2 (backend), a core system for managing laboratory orders and results.
+                                li Supported development of the Human Capital (CH) system, enabling HR and Payroll teams to manage attendance, incidents, and employee records more efficiently.
+                                li Deployed and maintained backend services using Docker containers, Traefik for load balancing/routing, and React-based frontends.
+                                li Introduced and implemented an internal package (“Capyvel”) to standardize ORM and routing in Go services, improving maintainability and flexibility for future backend projects.
+                                li Designed database schemas and prepared UI mockups for stakeholder review before development.
+                                li Facilitated technical meetings to align requirements with development tasks and ensure delivery milestones.
                         .flex-shrink-0
-                            span.text-primary March 2013 - Present
+                            span.text-primary October 2023 - August 2025
 
                     .d-flex.flex-column.flex-md-row.justify-content-between.mb-5
                         .flex-grow-1
-                            h3.mb-0 Web Developer
-                            .subheading.mb-3 Intelitec Solutions
-                            p
-                                | Capitalize on low hanging fruit to identify a ballpark value added activity to beta test. Override the digital divide with additional clickthroughs from DevOps. Nanotechnology immersion along the information highway will close the loop on focusing solely on the bottom line.
+                            h3.mb-0 Software Development Intern 
+                            .subheading.mb-3 Comisión Federal de Electricidad (CFE)
+                            ul 
+                                li Migrated a legacy C# desktop application to a Laravel web app, improving maintainability and accessibility.
+                                li Designed and deployed database schema (migrations, seeders, and data migration).
+                                li Deployed system on CFE’s local network via IISNode, ensuring secure and stable access.
+                                li Assisted with deployment and integration of an internal Node.js project.
                         .flex-shrink-0
-                            span.text-primary December 2011 - March 2013
+                            span.text-primary March 2023 - September 2023
 
                     .d-flex.flex-column.flex-md-row.justify-content-between.mb-5
                         .flex-grow-1
-                            h3.mb-0 Junior Web Designer
-                            .subheading.mb-3 Shout! Media Productions
-                            p
-                                | Podcasting operational change management inside of workflows to establish a framework. Taking seamless key performance indicators offline to maximise the long tail. Keeping your eye on the ball while performing a deep dive on the start-up mentality to derive convergence on cross-platform integration.
+                            h3.mb-0 University Social Service
+                            .subheading.mb-3 Universidad de Guadalajara (UDG)
+                            ul
+                                li Co-developed an Android app (Java, Android Studio) to read analog utility meters using the device camera and calculate consumption in real time.
+                                li Designed and trained a TensorFlow-based AI model to recognize numerical values from analog meters, integrated into the mobile app for offline usage.
+                                li Applied computer vision techniques with a partner to improve recognition accuracy through iterative model training.
                         .flex-shrink-0
-                            span.text-primary July 2010 - December 2011
-
-                    .d-flex.flex-column.flex-md-row.justify-content-between
-                        .flex-grow-1
-                            h3.mb-0 Web Design Intern
-                            .subheading.mb-3 Shout! Media Productions
-                            p
-                                | Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C users after installed base benefits. Dramatically visualize customer directed convergence without revolutionary ROI.
-                        .flex-shrink-0
-                            span.text-primary September 2008 - June 2010
-
+                            span.text-primary January 2022 - August 2022
             hr.m-0
 
             // Education
@@ -123,72 +129,145 @@ html(lang='en')
 
                     .d-flex.flex-column.flex-md-row.justify-content-between.mb-5
                         .flex-grow-1
-                            h3.mb-0 University of Colorado Boulder
-                            .subheading.mb-3 Bachelor of Science
-                            div Computer Science - Web Development Track
-                            p GPA: 3.23
+                            h3.mb-0 Centro Universitario de Ciencias Exactas e Ingenierías (CUCEI)
+                            .subheading.mb-3 Bachelor’s Degree
+                            div Computer Engineering
+                            p GPA: 3.7
                         .flex-shrink-0
-                            span.text-primary August 2006 - May 2010
-
-                    .d-flex.flex-column.flex-md-row.justify-content-between
-                        .flex-grow-1
-                            h3.mb-0 James Buchanan High School
-                            .subheading.mb-3 Technology Magnet Program
-                            p GPA: 3.56
-                        .flex-shrink-0
-                            span.text-primary August 2002 - May 2006
+                            span.text-primary January 2019 - November 2023
 
             hr.m-0
 
+            // Languages
+            section#languages.resume-section
+                .resume-section-content
+                    h2.mb-5 Languages
+
+                    .d-flex.flex-column.flex-md-row.justify-content-between.mb-5
+                        .flex-grow-1
+                            h3.mb-0 Spanish
+                            .subheading.mb-3 Native - C2
+                        .flex-grow-1
+                            h3.mb-0 English
+                            .subheading.mb-3 Intermediate - B1
+
+            hr.m-0
+
+            //- // Skills
+            //- section#skills.resume-section
+            //-     .resume-section-content
+            //-         h2.mb-5 Skills
+            //-         .subheading.mb-3 Programming Languages & Tools
+            //-         ul.list-inline.dev-icons
+            //-             li.list-inline-item
+            //-                 i.fab.fa-html5
+            //-             li.list-inline-item
+            //-                 i.fab.fa-css3-alt
+            //-             li.list-inline-item
+            //-                 i.fab.fa-js-square
+            //-             li.list-inline-item
+            //-                 i.fab.fa-angular
+            //-             li.list-inline-item
+            //-                 i.fab.fa-react
+            //-             li.list-inline-item
+            //-                 i.fab.fa-node-js
+            //-             li.list-inline-item
+            //-                 i.fab.fa-sass
+            //-             li.list-inline-item
+            //-                 i.fab.fa-less
+            //-             li.list-inline-item
+            //-                 i.fab.fa-wordpress
+            //-             li.list-inline-item
+            //-                 i.fab.fa-gulp
+            //-             li.list-inline-item
+            //-                 i.fab.fa-grunt
+            //-             li.list-inline-item
+            //-                 i.fab.fa-npm
+            //-         .subheading.mb-3 Workflow
+            //-         ul.fa-ul.mb-0
+            //-             li
+            //-                 span.fa-li
+            //-                     i.fas.fa-check
+            //-                 | Mobile-First, Responsive Design
+            //-             li
+            //-                 span.fa-li
+            //-                     i.fas.fa-check
+            //-                 | Cross Browser Testing & Debugging
+            //-             li
+            //-                 span.fa-li
+            //-                     i.fas.fa-check
+            //-                 | Cross Functional Teams
+            //-             li
+      
             // Skills
             section#skills.resume-section
                 .resume-section-content
                     h2.mb-5 Skills
-                    .subheading.mb-3 Programming Languages & Tools
-                    ul.list-inline.dev-icons
+                    // Programming
+                    .subheading.mb-3 Programming
+                    ul.list-inline.dev-icons.mb-3
                         li.list-inline-item
-                            i.fab.fa-html5
+                            i.fab.fa-golang(title="Go")
                         li.list-inline-item
-                            i.fab.fa-css3-alt
+                            i.fab.fa-java(title="Java")
                         li.list-inline-item
-                            i.fab.fa-js-square
+                            i.fab.fa-microsoft(title="C# / .NET Core")
                         li.list-inline-item
-                            i.fab.fa-angular
+                            i.fab.fa-js-square(title="JavaScript / Node.js")
                         li.list-inline-item
-                            i.fab.fa-react
+                            i.fab.fa-laravel(title="PHP / Laravel")
                         li.list-inline-item
-                            i.fab.fa-node-js
+                            i.fa-solid.fa-database(title="MySQL / PostgreSQL / SQL Server / MongoDB / Firebase")
+
+                    // DevOps & Tools
+                    .subheading.mb-3 DevOps & Tools
+                    ul.list-inline.dev-icons.mb-3
                         li.list-inline-item
-                            i.fab.fa-sass
+                            i.fab.fa-docker(title="Docker")
                         li.list-inline-item
-                            i.fab.fa-less
+                            i.fab.fa-git-alt(title="Git")
                         li.list-inline-item
-                            i.fab.fa-wordpress
-                        li.list-inline-item
-                            i.fab.fa-gulp
-                        li.list-inline-item
-                            i.fab.fa-grunt
-                        li.list-inline-item
-                            i.fab.fa-npm
+                            i.fab.fa-bitbucket(title="Jira / Bitbucket")
+
+                    // Web Development & API Tools
+                    .subheading.mb-3 Web Development & API Tools
+                    ul.fa-ul.mb-3
+                        li
+                            span.fa-li
+                                i.fas.fa-check
+                            | REST APIs / MVC / MVP
+                        li
+                            span.fa-li
+                                i.fas.fa-check
+                            | Swagger / Postman
+
+                    // Workflow
                     .subheading.mb-3 Workflow
                     ul.fa-ul.mb-0
                         li
                             span.fa-li
                                 i.fas.fa-check
-                            | Mobile-First, Responsive Design
+                            | Communication – explain technical concepts clearly
                         li
                             span.fa-li
                                 i.fas.fa-check
-                            | Cross Browser Testing & Debugging
+                            | Problem-solving – troubleshooting & creative solutions
                         li
                             span.fa-li
                                 i.fas.fa-check
-                            | Cross Functional Teams
+                            | Teamwork / Collaboration – agile & cross-functional teams
                         li
                             span.fa-li
                                 i.fas.fa-check
+                            | Adaptability – quickly learn new technologies
+                        li
+                            span.fa-li
+                                i.fas.fa-check
+                            | Time Management – meet deadlines and prioritize tasks
+                        li
+                            span.fa-li
+                                    i.fas.fa-check
                             | Agile Development & Scrum
-
             hr.m-0
 
             // Interests
@@ -210,41 +289,9 @@ html(lang='en')
                         li
                             span.fa-li
                                 i.fas.fa-trophy.text-warning
-                            | Google Analytics Certified Developer
-                        li
-                            span.fa-li
-                                i.fas.fa-trophy.text-warning
-                            | Mobile Web Specialist - Google Certification
-                        li
-                            span.fa-li
-                                i.fas.fa-trophy.text-warning
-                            | 1
-                            sup st 
-                            | Place - University of Colorado Boulder - Emerging Tech Competition 2009
-                        li
-                            span.fa-li
-                                i.fas.fa-trophy.text-warning
-                            | 1
-                            sup st 
-                            | Place - University of Colorado Boulder - Adobe Creative Jam 2008 (UI Design Category)
-                        li
-                            span.fa-li
-                                i.fas.fa-trophy.text-warning
-                            | 2
-                            sup nd 
-                            | Place - University of Colorado Boulder - Emerging Tech Competition 2008
-                        li
-                            span.fa-li
-                                i.fas.fa-trophy.text-warning
-                            | 1
-                            sup st 
-                            | Place - James Buchanan High School - Hackathon 2006
-                        li
-                            span.fa-li
-                                i.fas.fa-trophy.text-warning
-                            | 3
-                            sup rd 
-                            | Place - James Buchanan High School - Hackathon 2005
+                            | HackerRank 
+                            a(href='https://www.hackerrank.com/certificates/iframe/bbee24fa48dd') View Certification
+                        
 
         // Bootstrap core JS
         script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js')
