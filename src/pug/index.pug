@@ -59,12 +59,10 @@ html(lang='en')
                         | Gutierrez Romo
                         span.text-primary Fernando
                     .subheading.mb-5
-                        | 4064 Josefa Ortiz de Dominguez · Guadalajara, Jalisco, Mexico, CO 44820 · (+52) 3317466638 · 
+                        | Guadalajara, Jalisco, Mexico, CO 44820 · (+52) 3317466638 · 
                         a(href='mailto:fernandogromo517@gmail.com') fernandogromo517@gmail.com
                     p.lead.mb-5
-                        | Software Engineer with experience in backend development, mobile applications, and scalable architectures.
-                        | Proficient in Golang, .NET Core, and Docker, with a strong background working in Agile environments. Focused on
-                        | delivering efficient, maintainable, and reliable solutions.
+                        | Motivated full-stack developer with hands-on experience in Go, .NET Core, and Laravel. Skilled in building RESTful APIs and dynamic web applications. Passionate about learning modern back-end architectures and contributing to team-driven projects.
                     .social-icons
                         a.social-icon(href='https://www.linkedin.com/in/fernando-g-831355208/')
                             i.fab.fa-linkedin-in
@@ -72,6 +70,13 @@ html(lang='en')
                             i.fab.fa-github
                         a.social-icon(href='https://www.facebook.com/Fergup2')
                             i.fab.fa-facebook-f
+                        //- CV Download Button
+                        a.btn.btn-primary(href='/assets/img/pdf/EnglishResume.pdf' download='Fernando_Gutierrez_CV_English.pdf')
+                            i.fas.fa-download.me-2
+                            | Download Resume
+                        a.btn.btn-primary(href='/assets/img/pdf/SpanishResume.pdf' download='Fernando_Gutierrez_CV_Spanish.pdf')
+                            i.fas.fa-download.me-2
+                            | Download Resume (Spanish)
                     
 
             hr.m-0
@@ -86,14 +91,16 @@ html(lang='en')
                             h3.mb-0 Junior Software Developer
                             .subheading.mb-3 Núcleo de Diagnóstico                        
                             ul
-                                li Developed a REST API in Go (Golang) to allow patients to securely access test results, integrating with Bootmaker for WhatsApp and the official website. Centralized patient information, studies, and laboratory areas.
-                                li Built a sample processing system in C# (.NET Core 8, MVP pattern) that automatically grouped laboratory studies, areas, and analytes from SIAN orders, generating labeled outputs to streamline laboratory workflows.
-                                li Contributed to the development of SIAN2 (backend), a core system for managing laboratory orders and results.
-                                li Supported development of the Human Capital (CH) system, enabling HR and Payroll teams to manage attendance, incidents, and employee records more efficiently.
-                                li Deployed and maintained backend services using Docker containers, Traefik for load balancing/routing, and React-based frontends.
-                                li Introduced and implemented an internal package (“Capyvel”) to standardize ORM and routing in Go services, improving maintainability and flexibility for future backend projects.
-                                li Designed database schemas and prepared UI mockups for stakeholder review before development.
-                                li Facilitated technical meetings to align requirements with development tasks and ensure delivery milestones.
+                                li Developed and maintained back-end endpoints and authentication systems using Golang.
+                                li Implemented automated email routines to notify clients based on business workflows.
+                                li Documented RESTful APIs using Swagger and Postman for internal and external reference.
+                                li Deployed and managed Docker containers in production environments.
+                                li Designed, developed, and maintained database structures, ensuring data integrity and performance optimization.
+                                li Built a desktop application with .NET Core, handling both front-end and back-end development.
+                                li Collaborated with stakeholders to plan system architecture and define technical requirements.
+                                li Temporarily led development efforts for projects involving mobile (React Native) and web applications.
+                                li Provided support and maintenance for legacy systems, resolving bugs and improving functionality.
+                                li Supported the creation of detailed project reports and documentation for senior stakeholders.
                         .flex-shrink-0
                             span.text-primary October 2023 - August 2025
 
@@ -102,10 +109,10 @@ html(lang='en')
                             h3.mb-0 Software Development Intern 
                             .subheading.mb-3 Comisión Federal de Electricidad (CFE)
                             ul 
-                                li Migrated a legacy C# desktop application to a Laravel web app, improving maintainability and accessibility.
-                                li Designed and deployed database schema (migrations, seeders, and data migration).
-                                li Deployed system on CFE’s local network via IISNode, ensuring secure and stable access.
-                                li Assisted with deployment and integration of an internal Node.js project.
+                                li Developed a web application using Laravel, working on both front-end and back-end features as the sole developer.
+                                li Designed the database structure and performed data migration from a legacy system to the new application.
+                                li Maintained and enhanced Node.js (Express) applications to improve performance and reliability.
+                                li Created and maintained technical documentation for both existing and newly developed projects.
                         .flex-shrink-0
                             span.text-primary March 2023 - September 2023
 
@@ -114,9 +121,8 @@ html(lang='en')
                             h3.mb-0 University Social Service
                             .subheading.mb-3 Universidad de Guadalajara (UDG)
                             ul
-                                li Co-developed an Android app (Java, Android Studio) to read analog utility meters using the device camera and calculate consumption in real time.
-                                li Designed and trained a TensorFlow-based AI model to recognize numerical values from analog meters, integrated into the mobile app for offline usage.
-                                li Applied computer vision techniques with a partner to improve recognition accuracy through iterative model training.
+                                li Collaborated with a team to develop a mobile application in Java that integrated pre-trained AI models for computer vision using OpenCV.
+                                li Trained and evaluated multiple AI models with TensorFlow, using diverse image datasets to improve object-detection accuracy.
                         .flex-shrink-0
                             span.text-primary January 2022 - August 2022
             hr.m-0
@@ -128,10 +134,10 @@ html(lang='en')
 
                     .d-flex.flex-column.flex-md-row.justify-content-between.mb-5
                         .flex-grow-1
-                            h3.mb-0 Centro Universitario de Ciencias Exactas e Ingenierías (CUCEI)
+                            h3.mb-0 Universidad de Guadalajara – Centro Universitario de Ciencias Exactas e Ingenierías (CUCEI)
                             .subheading.mb-3 Bachelor’s Degree
                             div Computer Engineering
-                            p GPA: 3.7
+                            p GPA: 92.0
                         .flex-shrink-0
                             span.text-primary January 2019 - November 2023
 
@@ -141,7 +147,6 @@ html(lang='en')
             section#languages.resume-section
                 .resume-section-content
                     h2.mb-5 Languages
-
                     .d-flex.flex-column.flex-md-row.justify-content-between.mb-5
                         .flex-grow-1
                             h3.mb-0 Spanish
@@ -151,76 +156,179 @@ html(lang='en')
                             .subheading.mb-3 Intermediate - B1
 
             hr.m-0
-      
             // Skills
-            section#skills.resume-section
+            .section#skills.resume-section.px-5
                 .resume-section-content
                     h2.mb-5 Skills
+                    //- .d-flex.flex-column.flex-md-row.justify-content-between.mb-5
                     // Programming
-                    .subheading.mb-3 Programming
-                    ul.list-inline.dev-icons.mb-3
-                        li.list-inline-item
-                            i.fab.fa-golang(title="Go")
-                        li.list-inline-item
-                            i.fab.fa-java(title="Java")
-                        li.list-inline-item
-                            i.fab.fa-microsoft(title="C# / .NET Core")
-                        li.list-inline-item
-                            i.fab.fa-js-square(title="JavaScript / Node.js")
-                        li.list-inline-item
-                            i.fab.fa-laravel(title="PHP / Laravel")
-                        li.list-inline-item
-                            i.fa-solid.fa-database(title="MySQL / PostgreSQL / SQL Server / MongoDB / Firebase")
+                    div
+                        h4.mb-0 Programming
+                        ul.list-inline.dev-icons.mb-3
+                            li.list-inline-item
+                                i.fab.fa-golang(title="Go")
+                            li.list-inline-item
+                                i.fab.fa-java(title="Java")
+                            li.list-inline-item
+                                i.fab.fa-microsoft(title="C# / .NET Core")
+                            li.list-inline-item
+                                i.fab.fa-js-square(title="JavaScript / Node.js")
+                            li.list-inline-item
+                                i.fab.fa-laravel(title="PHP / Laravel")
+                            li.list-inline-item
+                                i.fa-solid.fa-database(title="MySQL / PostgreSQL / SQL Server / MongoDB / Firebase")
+
+                    // Databases
+                    div 
+                        h4.mb-0 Databases
+                        ul.fa-ul.mb-3
+                            li
+                                span.fa-li
+                                    i.fas.fa-check
+                                | MySQL
+                            li
+                                span.fa-li
+                                    i.fas.fa-check
+                                | SQL Server
+
+                    // Web Development
+                    div 
+                        h4.mb-0 Web Development
+                        ul.fa-ul.mb-3
+                                li
+                                    span.fa-li
+                                        i.fas.fa-check
+                                    | REST APIs
+                                li
+                                    span.fa-li
+                                        i.fas.fa-check
+                                    | HTML
+                                li
+                                    span.fa-li
+                                        i.fas.fa-check
+                                    | CSS
+                                li
+                                    span.fa-li
+                                        i.fas.fa-check
+                                    | MVC / MVP
+                                li
+                                    span.fa-li
+                                        i.fas.fa-check
+                                    | Swagger
+                                li
+                                    span.fa-li
+                                        i.fas.fa-check
+                                    | Postman
 
                     // DevOps & Tools
-                    .subheading.mb-3 DevOps & Tools
-                    ul.list-inline.dev-icons.mb-3
-                        li.list-inline-item
-                            i.fab.fa-docker(title="Docker")
-                        li.list-inline-item
-                            i.fab.fa-git-alt(title="Git")
-                        li.list-inline-item
-                            i.fab.fa-bitbucket(title="Jira / Bitbucket")
+                    div 
+                        h4.mb-0 DevOps & Tools
+                        ul.fa-ul.mb-3
+                                li
+                                    span.fa-li
+                                        i.fas.fa-check
+                                    | Docker
+                                li
+                                    span.fa-li
+                                        i.fas.fa-check
+                                    | Git
+                                li
+                                    span.fa-li
+                                        i.fas.fa-check
+                                    | Jira
+                                li
+                                    span.fa-li
+                                        i.fas.fa-check
+                                    | Bitbucket
 
-                    // Web Development & API Tools
-                    .subheading.mb-3 Web Development & API Tools
-                    ul.fa-ul.mb-3
-                        li
-                            span.fa-li
-                                i.fas.fa-check
-                            | REST APIs / MVC / MVP
-                        li
-                            span.fa-li
-                                i.fas.fa-check
-                            | Swagger / Postman
+                    // Concepts
+                    div 
+                        h4.mb-0 Concepts
+                        ul.fa-ul.mb-3
+                                li
+                                    span.fa-li
+                                        i.fas.fa-check
+                                    | Object-Oriented Programming (OOP)
+                                li
+                                    span.fa-li
+                                        i.fas.fa-check
+                                    | Microservice Design
+                                li
+                                    span.fa-li
+                                        i.fas.fa-check
+                                    | Authentication & Authorization (JWT)
+                                li
+                                    span.fa-li
+                                        i.fas.fa-check
+                                    | Code Optimization
+                                li
+                                    span.fa-li
+                                        i.fas.fa-check
+                                    | SQL Integration
+                                li
+                                    span.fa-li
+                                        i.fas.fa-check
+                                    | Data Structures
+                                li
+                                    span.fa-li
+                                        i.fas.fa-check
+                                    | Version Control
+                                li
+                                    span.fa-li
+                                        i.fas.fa-check
+                                    | Code Debugging
 
-                    // Workflow
-                    .subheading.mb-3 Workflow
-                    ul.fa-ul.mb-0
-                        li
-                            span.fa-li
-                                i.fas.fa-check
-                            | Communication – explain technical concepts clearly
-                        li
-                            span.fa-li
-                                i.fas.fa-check
-                            | Problem-solving – troubleshooting & creative solutions
-                        li
-                            span.fa-li
-                                i.fas.fa-check
-                            | Teamwork / Collaboration – agile & cross-functional teams
-                        li
-                            span.fa-li
-                                i.fas.fa-check
-                            | Adaptability – quickly learn new technologies
-                        li
-                            span.fa-li
-                                i.fas.fa-check
-                            | Time Management – meet deadlines and prioritize tasks
-                        li
-                            span.fa-li
-                                    i.fas.fa-check
-                            | Agile Development & Scrum
+                    // Practices
+                    div 
+                        h4.mb-0 Practices
+                        ul.fa-ul.mb-3
+                                li
+                                    span.fa-li
+                                        i.fas.fa-check
+                                    | Agile
+                                li
+                                    span.fa-li
+                                        i.fas.fa-check
+                                    | Scrum
+
+                    // Frameworks & Libraries
+                    div 
+                        h4.mb-0 Framework & Libraries
+                        ul.fa-ul.mb-3
+                                li
+                                    span.fa-li
+                                        i.fas.fa-check
+                                    | Laravel
+                                li
+                                    span.fa-li
+                                        i.fas.fa-check
+                                    | Entity Framework
+                                li
+                                    span.fa-li
+                                        i.fas.fa-check
+                                    | Gin
+                                li
+                                    span.fa-li
+                                        i.fas.fa-check
+                                    | Gorm
+                                li
+                                    span.fa-li
+                                        i.fas.fa-check
+                                    | Swago
+                                li
+                                    span.fa-li
+                                        i.fas.fa-check
+                                    | Spatie
+                                li
+                                    span.fa-li
+                                        i.fas.fa-check
+                                    | Eloquent
+                                li
+                                    span.fa-li
+                                        i.fas.fa-check
+                                    | Tailwind CSS
+
+
             hr.m-0
 
             // Interests
@@ -228,10 +336,10 @@ html(lang='en')
                 .resume-section-content
                     h2.mb-5 Interests
                     p
-                        | Apart from being a web developer, I enjoy most of my time being outdoors. In the winter, I am an avid skier and novice ice climber. During the warmer months here in Colorado, I enjoy mountain biking, free climbing, and kayaking.
-                    p.mb-0
-                        | When forced indoors, I follow a number of sci-fi and fantasy genre movies and television shows, I am an aspiring chef, and I spend a large amount of my free time exploring the latest technology advancements in the front-end web development world.
-                    p.mb-5 
+                        | Apart from being a software developer, I enjoy staying active to maintain focus and energy for programming. 
+                        | My favorite activities include cycling, participating in races, and running outdoors. 
+                        | I am also a fan of sci-fi and horror movies, which I use to practice my English skills. 
+                        |Additionally, I enjoy exploring technology trends, listening to music, and playing video games while coding.
                     // Interests Icons
                     .subheading.mb-3 Hobbies & Activities
                     ul.list-inline.dev-icons.mb-3
@@ -253,8 +361,13 @@ html(lang='en')
                         li
                             span.fa-li
                                 i.fas.fa-trophy.text-warning
-                            | HackerRank 
-                            a(href='https://www.hackerrank.com/certificates/iframe/bbee24fa48dd') View Certification
+                            | Go  HackerRank 
+                            a(href='https://www.hackerrank.com/certificates/bbee24fa48dd') View Certification
+                        li
+                            span.fa-li
+                                i.fas.fa-trophy.text-warning
+                            | SQL HackerRank 
+                            a(href='https://www.hackerrank.com/certificates/65e5daf51507') View Certification
                         
 
         // Bootstrap core JS
