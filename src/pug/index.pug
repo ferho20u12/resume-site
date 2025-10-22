@@ -27,7 +27,7 @@ html(lang='en')
         // Navigation
         nav#sideNav.navbar.navbar-expand-lg.navbar-dark.bg-primary.fixed-top
             a.navbar-brand.js-scroll-trigger(href='#page-top')
-                span.d-block.d-lg-none Fernando Gutierrez Romo
+                span.d-block.d-lg-none Gutierrez Fernando
                 span.d-none.d-lg-block
                     img.img-fluid.img-profile.rounded-circle.mx-auto.mb-2(src='assets/img/profile.png', alt='...')
             button.navbar-toggler(type='button', data-bs-toggle='collapse', data-bs-target='#navbarResponsive', aria-controls='navbarResponsive', aria-expanded='false', aria-label='Toggle navigation')
@@ -41,11 +41,7 @@ html(lang='en')
                     li.nav-item
                         a.nav-link.js-scroll-trigger(href='#education') Education
                     li.nav-item
-                        a.nav-link.js-scroll-trigger(href='#languages') Languages
-                    li.nav-item
                         a.nav-link.js-scroll-trigger(href='#skills') Skills
-                    li.nav-item
-                        a.nav-link.js-scroll-trigger(href='#interests') Interests
                     li.nav-item
                         a.nav-link.js-scroll-trigger(href='#certifications') Certifications
 
@@ -56,26 +52,26 @@ html(lang='en')
             section#about.resume-section
                 .resume-section-content
                     h1.mb-0
-                        | Gutierrez Romo
+                        | Gutierrez
                         span.text-primary Fernando
                     .subheading.mb-5
-                        | Guadalajara, Jalisco, Mexico, CO 44820 · (+52) 3317466638 · 
+                        | Guadalajara, Mexico , CO 44820 · (+52) 3317466638 ·
                         a(href='mailto:fernandogromo517@gmail.com') fernandogromo517@gmail.com
                     p.lead.mb-5
                         | Motivated full-stack developer with hands-on experience in Go, .NET Core, and Laravel. Skilled in building RESTful APIs and dynamic web applications. Passionate about learning modern back-end architectures and contributing to team-driven projects.
-                    .social-icons
+                                
+                    .social-icons.mb-5
                         a.social-icon(href='https://www.linkedin.com/in/fernando-g-831355208/')
                             i.fab.fa-linkedin-in
                         a.social-icon(href='https://github.com/ferho20u12')
                             i.fab.fa-github
                         a.social-icon(href='https://www.facebook.com/Fergup2')
                             i.fab.fa-facebook-f
-                        //- CV Download Button
-                        a.btn.btn-primary(href='/assets/img/pdf/EnglishResume.pdf' download='Fernando_Gutierrez_CV_English.pdf')
-                            i.fas.fa-download.me-2
-                            | Download Resume
+                            
+                    a.btn.btn-primary.mt-2(href='/assets/pdf/EnglishResume.pdf' download='Fernando_Gutierrez_CV.pdf')
+                        i.fas.fa-download.me-2
+                        | Download CV
                     
-
             hr.m-0
 
             // Experience
@@ -137,14 +133,8 @@ html(lang='en')
                             p GPA: 92.0
                         .flex-shrink-0
                             span.text-primary January 2019 - November 2023
-
-            hr.m-0
-
-            // Languages
-            section#languages.resume-section
-                .resume-section-content
-                    h2.mb-5 Languages
-                    .d-flex.flex-column.flex-md-row.justify-content-between.mb-5
+                    h2.mb-5 Language
+                    .d-flex.flex-column.flex-md-row.justify-content-between
                         .flex-grow-1
                             h3.mb-0 Spanish
                             .subheading.mb-3 Native - C2
@@ -153,8 +143,10 @@ html(lang='en')
                             .subheading.mb-3 Intermediate - B1
 
             hr.m-0
+
+            hr.m-0
             // Skills
-            .section#skills.resume-section.px-5
+            section#skills.resume-section
                 .resume-section-content
                     h2.mb-5 Skills
                     //- .d-flex.flex-column.flex-md-row.justify-content-between.mb-5
@@ -326,28 +318,6 @@ html(lang='en')
                                     | Tailwind CSS
 
 
-            hr.m-0
-
-            // Interests
-            section#interests.resume-section
-                .resume-section-content
-                    h2.mb-5 Interests
-                    p
-                        | Apart from being a software developer, I enjoy staying active to maintain focus and energy for programming. 
-                        | My favorite activities include cycling, participating in races, and running outdoors. 
-                        | I am also a fan of sci-fi and horror movies, which I use to practice my English skills. 
-                        |Additionally, I enjoy exploring technology trends, listening to music, and playing video games while coding.
-                    // Interests Icons
-                    .subheading.mb-3 Hobbies & Activities
-                    ul.list-inline.dev-icons.mb-3
-                        li.list-inline-item
-                            i.fa-solid.fa-bicycle(title="Biking")
-                        li.list-inline-item
-                            i.fa-solid.fa-person-running(title="Running")
-                        li.list-inline-item
-                            i.fa-solid.fa-gamepad(title="Play Video Games")
-                        li.list-inline-item
-                            i.fa-solid.fa-music(title="Listening to Music")
             hr.m-0
 
             // Certifications

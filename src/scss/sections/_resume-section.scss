@@ -3,17 +3,32 @@
 // 
 
 section.resume-section {
-    display: flex;
-    align-items: center;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    padding-top: 5rem;
-    padding-bottom: 5rem;
-    max-width: 75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center; // center card horizontally
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  max-width: 75rem;
+  margin: 0 auto; // center section on page
+  background-color: #f8f9fa; // light gray background (Bootstrap default)
+  
+  // The card container
+  .resume-section-content {
+    width: 100%;
+    background-color: #fff; // white card
+    border-radius: 1rem; // smooth corners
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); // subtle shadow
+    padding: 3rem; // inner spacing
+    transition: all 0.3s ease; // smooth hover effect
 
-    .resume-section-content {
-        width: 100%;
+    // Optional hover effect to make it feel alive
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
     }
+  }
 }
 
 @include media-breakpoint-up(md) {
