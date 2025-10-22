@@ -5,28 +5,25 @@
 section.resume-section {
   display: flex;
   align-items: center;
-  justify-content: center; // center card horizontally
+  justify-content: center;
   padding-left: 1rem;
   padding-right: 1rem;
   padding-top: 5rem;
   padding-bottom: 5rem;
-  max-width: 75rem;
-  margin: 0 auto; // center section on page
-  background-color: #f8f9fa; // light gray background (Bootstrap default)
-  
-  // The card container
+  max-width: 90rem;
+  margin: 0 auto;
+
   .resume-section-content {
     width: 100%;
-    background-color: #fff; // white card
-    border-radius: 1rem; // smooth corners
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); // subtle shadow
-    padding: 3rem; // inner spacing
-    transition: all 0.3s ease; // smooth hover effect
+    background-color: #fff; 
+    border-radius: 1rem; 
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    padding: 3rem;
+    transition: all 0.3s ease; 
 
-    // Optional hover effect to make it feel alive
     &:hover {
       transform: translateY(-5px);
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
     }
   }
 }
@@ -34,14 +31,5 @@ section.resume-section {
 @include media-breakpoint-up(md) {
     section.resume-section {
         min-height: 100vh;
-    }
-}
-
-@include media-breakpoint-up(lg) {
-    section.resume-section {
-        padding-left: 3rem;
-        padding-right: 3rem;
-        padding-top: 5rem;
-        padding-bottom: 5rem;
     }
 }
