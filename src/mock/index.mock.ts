@@ -1,4 +1,3 @@
-// mocks/index.ts
 import { EXPERIENCE_DATA_EN, EXPERIENCE_DATA_ES } from "./experience.mock";
 import { PROFILE_DATA_EN, PROFILE_DATA_ES } from "./profile.mock";
 import { CATEGORY_SKILL_DATA_EN, CATEGORY_SKILL_DATA_ES } from "./category-skill.mock";

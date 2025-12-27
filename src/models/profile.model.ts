@@ -5,5 +5,5 @@ export interface Profile {
   name: string;
   about: string;
   profileUrl: string;  
-  socialMedia: Record<string, SocialMedia>;
+  socialMedia: SocialMedia[];
 }

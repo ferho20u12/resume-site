@@ -1,6 +1,6 @@
 export default function PageContainer({ children }: { children: React.ReactNode }) {
   return (
-    <main className="max-w-3xl mx-auto px-4 py-6 pb-20">
+    <main className="bg-green-200 rounded-3xl p-6 grow overflow-y-auto">
       {children}
     </main>
   );

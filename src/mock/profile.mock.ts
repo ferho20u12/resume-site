@@ -16,13 +16,32 @@ export const PROFILE_DATA_ES: Profile = {
   profileUrl: "https://media.licdn.com/dms/image/v2/D4E03AQExGXq63uHplA/profile-displayphoto-scale_400_400/B4EZs0wJudJgAg-/0/1766116597063?e=1768435200&v=beta&t=C2cIbCZLxfQ4VT-TYN8q6n3DXryzmtu2vaIJTPo4fxE",
   socialMedia: getSocialMedia(),
 };
-
-export function getSocialMedia(): Record<string, SocialMedia> {
-  return {
-    github:   { name: "Github", link: "https://github.com/ferho20u12", icon: "github-icon" },
-    linkedin: { name: "Linkedin", link: "https://www.linkedin.com/in/fernando-gromo/", icon: "linkedin-icon" },
-    whatsapp: { name: "Whats app", link: "https://wa.me/523317466638", icon: "phone-icon"},
-    phone:    { name: "Phone", link: "tel:+523333333", icon: "phone-icon"},
-    email:    { name: "Email", link: "mailto:fernandogromo517@gmail.com", icon: "email-icon"}
-  };
+export function getSocialMedia(): SocialMedia[] {
+  return [
+    {
+      name: "github", link: "https://github.com/ferho20u12", icon: "github-icon",
+      showInProfile: false,
+      showInFooterLinks: false
+    },
+    {
+      name: "linkedin", link: "https://www.linkedin.com/in/fernando-gromo/", icon: "linkedin-icon",
+      showInProfile: false,
+      showInFooterLinks: false
+    },
+    {
+      name: "whatsapp", link: "https://wa.me/523317466638", icon: "phone-icon",
+      showInProfile: false,
+      showInFooterLinks: false
+    },
+    {
+      name: "phone", link: "tel:+523333333", icon: "phone-icon",
+      showInProfile: true,
+      showInFooterLinks: false
+    },
+    {
+      name: "email", link: "mailto:fernandogromo517@gmail.com", icon: "email-icon",
+      showInProfile: true,
+      showInFooterLinks: false
+    }
+  ];
 }
