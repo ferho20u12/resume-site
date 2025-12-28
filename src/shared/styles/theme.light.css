@@ -1,0 +1,12 @@
+/* theme.light.css */
+[data-theme='light'] {
+  --bg-page: url('https://cdn.pixabay.com/video/2025/07/06/289855_large.mp4');
+  --text: var(--gray-800);
+  --text-soft: var(--gray-500);
+
+  --surface: rgba(255, 255, 255, 0.45);
+  --surface-border: rgba(255, 255, 255, 0.8);
+
+  --accent: var(--red-500);
+  --accent-hover: var(--red-700);
+}

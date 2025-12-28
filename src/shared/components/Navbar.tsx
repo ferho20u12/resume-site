@@ -2,14 +2,15 @@ import Link from "next/link";
 import { NAVIGATION } from "@src/configuration/navigation.config";
 import { Icon } from "@iconify/react";
 import { PageParams } from "@src/types/page.types";
+
 export default function Navbar({ pageParams }: { pageParams: PageParams }) {
   const items = NAVIGATION[pageParams.lang];
 
   return (
-   <nav
+    <nav
       className="
+        glass
         fixed bottom-0 left-0 z-50
-        bg-blue-400 shadow-lg
         h-[10vh] sm:h-17.5 md:h-20
         w-full md:w-auto
         md:left-1/2 md:transform md:-translate-x-1/2
@@ -28,12 +29,21 @@ export default function Navbar({ pageParams }: { pageParams: PageParams }) {
               flex flex-col items-center justify-center gap-1
               px-3 py-2 rounded-xl
               min-w-15 sm:min-w-17.5 md:min-w-22.5
-              hover:bg-blue-500 transition
-              shrink-0
+              transition shrink-0
+              hover:bg-[color-mix(in_srgb,var(--surface-border)_20%,transparent)]
             "
+            style={{ color: "var(--text)" }}
           >
-            <Icon icon={icon} className="text-[29px] sm:text-xl md:text-2xl leading-none inline-block"/>
-            <span className="text-[10px] sm:text-xs md:text-sm font-medium leading-none">{label} </span>
+            <Icon
+              icon={icon}
+              className="text-[29px] sm:text-xl md:text-2xl leading-none inline-block"
+              style={{ color: "var(--text)" }}
+            />
+            <span
+              className="text-[10px] sm:text-xs md:text-sm font-medium leading-none"
+            >
+              {label}
+            </span>
           </Link>
         ))}
       </div>

@@ -10,7 +10,6 @@ import { QuickActionItem, QuickActionMenu } from "./QuickActionMenu";
 import { THEMES } from "@src/configuration/themes.config";
 import { PageParams } from "@src/types/page.types";
 
-
 export default function FooterLinks({ pageParams }: { pageParams: PageParams }) {
   const [themeOpen, setThemeOpen] = useState(false);
   const [langOpen, setLangOpen] = useState(false);
@@ -35,7 +34,7 @@ export default function FooterLinks({ pageParams }: { pageParams: PageParams }) 
   const socialMedia = profile.socialMedia.filter((sm) => sm.showInFooterLinks);
 
   const router = useRouter();
-  const changeLang  = (selected: string) => {
+  const changeLang = (selected: string) => {
     document.cookie = `lang=${selected}; path=/`;
     router.refresh();
   };
@@ -45,7 +44,17 @@ export default function FooterLinks({ pageParams }: { pageParams: PageParams }) 
   };
 
   return (
-    <footer className="w-full h-[10vh] flex items-center justify-between">
+    <footer
+      className="
+        w-full h-[10vh]
+        flex items-center justify-between
+      "
+      style={{
+        background: "var(--color-bg)",
+        color: "var(--color-text)",
+      }}
+    >
+      {/* SOCIAL */}
       <section id="social-media">
         <div className="flex flex-row items-center gap-4 flex-wrap">
           {socialMedia.map(({ link, icon, name }) => (
@@ -54,13 +63,27 @@ export default function FooterLinks({ pageParams }: { pageParams: PageParams }) 
               href={link}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-black hover:text-gray-700 transition-colors"
+              className="transition-colors"
+              style={{
+                color: "var(--color-text)",
+              }}
             >
-              <Icon icon={icon} className="text-[32px] sm:text-3xl md:text-4xl lg:text-5xl" />
+              <Icon
+                icon={icon}
+                className="
+                  text-[32px] sm:text-3xl md:text-4xl lg:text-5xl
+                  leading-none
+                "
+                style={{
+                  color: "var(--color-text)",
+                }}
+              />
             </a>
           ))}
         </div>
       </section>
+
+      {/* CONTROLS */}
       {mounted && (
         <section id="controls" className="flex gap-4">
           <QuickActionMenu
@@ -77,7 +100,6 @@ export default function FooterLinks({ pageParams }: { pageParams: PageParams }) 
           />
         </section>
       )}
-
     </footer>
   );
 }

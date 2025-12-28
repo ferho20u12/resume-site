@@ -1,0 +1,34 @@
+/* tokens.css */
+:root {
+  /* Reds */
+  --red-50: #ffe8e8;
+  --red-100: #ffb3b3;
+  --red-300: #ff6b6b;
+  --red-500: #ff4d4d;
+  --red-700: #d93636;
+
+  /* Blues */
+  --blue-50: #e6f2ff;
+  --blue-100: #b3d4ff;
+  --blue-300: #669cff;
+  --blue-500: #4a7cff;
+  --blue-700: #3358b8;
+
+  /* Browns */
+  --brown-100: #d9c2ac;
+  --brown-300: #ad8a64;
+  --brown-500: #805a3b;
+  --brown-700: #593d28;
+
+  /* Neutrals */
+  --white: #ffffff;
+  --black: #000000;
+  --gray-100: #f2f2f2;
+  --gray-300: #c7c7c7;
+  --gray-500: #8a8a8a;
+  --gray-800: #2a2a2a;
+
+  /* Shadows / Borders */
+  --radius: 10px;
+  --shadow-glass: 0 4px 32px rgba(0, 0, 0, .25);
+}

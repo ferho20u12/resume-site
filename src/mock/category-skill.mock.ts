@@ -1,5 +1,4 @@
 import { CategorySkill } from "@src/models/category-skill.model";
-import { Skill } from "@src/models/skill.model";
 
 export const CATEGORY_SKILL_DATA_EN: CategorySkill[] = [
   {

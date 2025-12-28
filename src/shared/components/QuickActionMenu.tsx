@@ -1,4 +1,5 @@
 "use client";
+
 import { useEffect, useRef } from "react";
 import { Icon } from "@iconify/react";
 
@@ -24,39 +25,45 @@ export function QuickActionMenu({
   setOpen,
 }: QuickActionMenuProps) {
   const ref = useRef<HTMLDivElement | null>(null);
-    useEffect(() => {
+
+  useEffect(() => {
     const handleClickOutside = (event: MouseEvent | TouchEvent) => {
-        if (ref.current && !ref.current.contains(event.target as Node)) {
+      if (ref.current && !ref.current.contains(event.target as Node)) {
         setOpen(false);
-        }
+      }
     };
 
     if (open) {
-        document.addEventListener("mousedown", handleClickOutside);
-        document.addEventListener("touchstart", handleClickOutside);
+      document.addEventListener("mousedown", handleClickOutside);
+      document.addEventListener("touchstart", handleClickOutside);
     }
 
     return () => {
-        document.removeEventListener("mousedown", handleClickOutside);
-        document.removeEventListener("touchstart", handleClickOutside);
+      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener("touchstart", handleClickOutside);
     };
-    }, [open, setOpen]);
-
+  }, [open, setOpen]);
 
   return (
     <div ref={ref} className="relative flex flex-col items-end">
       <button
         onClick={() => setOpen(!open)}
         className="
-          bg-white text-blue-500 p-3 rounded-full shadow
-          hover:bg-gray-100 transition border border-black
+          p-3 rounded-full shadow transition border
+          bg-(--color-bg-alt) text-(--color-text) border-(--color-border)
+          hover:bg-(--color-hover)
         "
       >
         <Icon icon={icon} className="text-2xl" />
       </button>
 
       {open && (
-        <div className="absolute right-0 bottom-full mb-2 w-44 bg-white border border-gray-200 rounded-2xl shadow-lg z-10 overflow-hidden">
+        <div
+          className="
+            absolute right-0 bottom-full mb-2 w-44 rounded-2xl shadow-lg z-10 overflow-hidden border
+            bg-(--color-bg-alt) text-(--color-text) border-(--color-border)
+          "
+        >
           {actions.map(({ key, icon, label, onClick }) => (
             <button
               key={key}
@@ -64,10 +71,15 @@ export function QuickActionMenu({
                 onClick();
                 setOpen(false);
               }}
-              className="flex items-center gap-2 w-full text-left px-4 py-2 hover:bg-gray-100 transition"
+              className="
+                flex items-center gap-2 w-full text-left px-4 py-2 transition
+                hover:bg-(--color-hover)
+              "
             >
-                <Icon icon={icon} /> 
-                <span className="text-sm font-medium">{label}</span>
+              <Icon icon={icon} className="text-xl" />
+              <span className="text-sm font-medium">
+                {label}
+              </span>
             </button>
           ))}
         </div>

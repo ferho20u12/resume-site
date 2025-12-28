@@ -1,0 +1,8 @@
+/* shared/styles/glass.css */
+.glass {
+  background: var(--surface);
+  border: 1px solid var(--surface-border);
+  backdrop-filter: blur(12px);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-glass);
+}
