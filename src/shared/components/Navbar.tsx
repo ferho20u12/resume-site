@@ -1,8 +1,9 @@
 import Link from "next/link";
 import { NAVIGATION } from "@src/configuration/navigation.config";
 import { Icon } from "@iconify/react";
-export default function Navbar({ lang }: { lang: string }) {
-  const items = NAVIGATION[lang];
+import { PageParams } from "@src/types/page.types";
+export default function Navbar({ pageParams }: { pageParams: PageParams }) {
+  const items = NAVIGATION[pageParams.lang];
 
   return (
    <nav
@@ -31,8 +32,8 @@ export default function Navbar({ lang }: { lang: string }) {
               shrink-0
             "
           >
-            <Icon className="text-lg sm:text-xl md:text-2xl" icon={icon} />
-            <span className="text-[10px] sm:text-xs md:text-sm font-medium">{label}</span>
+            <Icon icon={icon} className="text-[29px] sm:text-xl md:text-2xl leading-none inline-block"/>
+            <span className="text-[10px] sm:text-xs md:text-sm font-medium leading-none">{label} </span>
           </Link>
         ))}
       </div>

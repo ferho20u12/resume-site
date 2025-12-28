@@ -1,5 +1,7 @@
 export interface Skill {
-  id : number,
-  categorySkillId : number,
-  description: string  
+  id: number;
+  name: string;
+  level?: string;
+  years?: number;
+  notes?: string;
 }
