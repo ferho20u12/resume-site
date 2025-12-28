@@ -1,4 +1,4 @@
-export default function PortafolioPage() {
+export default function PortfolioPage() {
   return (
     <div>
       Portafolio
