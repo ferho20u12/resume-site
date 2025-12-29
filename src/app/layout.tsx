@@ -1,21 +1,22 @@
-'use client';
-
 import './globals.css';
 import PageContainer from "@src/shared/components/PageContainer";
 import FooterLinks from "@src/shared/components/FooterLinks";
 import Navbar from "@src/shared/components/Navbar";
-import { ThemeInitializer } from "@src/shared/components/ThemeInitializer";
+import { cookies } from "next/headers";
+import { LANGUAGES } from '@src/configuration/languages.config';
+import { THEMES } from '@src/configuration/themes.config';
 import { PageParams } from '@src/types/page.types';
+import { ThemeInitializer } from "@src/shared/components/ThemeInitializer";
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
-  // Valores por defecto para export estático
-  const defaultLang = "en";
-  const defaultTheme = "system"; // se corrige en cliente
-
-  const pageParams: PageParams = { lang: defaultLang, theme: defaultTheme };
+export default async function RootLayout({ children }: { children: React.ReactNode }) {
+  const cookieStore = await cookies();
+  const lang = LANGUAGES.find(l => l.code === (cookieStore.get("lang")?.value ?? ""))?.code ?? "en";
+  const cookieTheme = cookieStore.get("theme")?.value ?? "system";
+  const initialTheme = THEMES[lang].find(t => t.code === (cookieTheme)) ? cookieTheme : "system";
+  const pageParams: PageParams = { lang, theme: cookieTheme };
 
   return (
-    <html lang={defaultLang}>
+    <html lang="es">
       <body
         className="min-h-screen"
         style={{
@@ -26,9 +27,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           backgroundRepeat: "no-repeat",
         }}
       >
-        {/* Ajusta theme en cliente */}
-        <ThemeInitializer initialTheme={defaultTheme} />
-
+        <ThemeInitializer initialTheme={initialTheme} />
         <div className="flex flex-col">
           <div className="mx-[2%] md:mx-[15%]">
             <PageContainer pageParams={pageParams}>{children}</PageContainer>
