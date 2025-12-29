@@ -60,6 +60,7 @@ export function QuickActionMenu({
       {open && (
         <div
           className="
+            glass
             absolute right-0 bottom-full mb-2 w-44 rounded-2xl shadow-lg z-10 overflow-hidden border
             bg-(--color-bg-alt) text-(--color-text) border-(--color-border)
           "

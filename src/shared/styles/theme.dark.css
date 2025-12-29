@@ -1,12 +1,11 @@
-/* theme.dark.css */
 [data-theme='dark'] {
-  --bg-page: url('https://cdn.pixabay.com/video/2021/10/10/91562-629172467_large.mp4');
+  --bg-page: url('/img/bg-dark.jpg');
   --text: var(--gray-100);
   --text-soft: var(--gray-300);
-
+  
   --surface: rgba(25, 25, 40, 0.35);
   --surface-border: rgba(255, 255, 255, 0.15);
 
-  --accent: var(--red-300);
-  --accent-hover: var(--red-100);
+  --accent: var(--red-500);
+  --accent-hover: var(--red-700);
 }

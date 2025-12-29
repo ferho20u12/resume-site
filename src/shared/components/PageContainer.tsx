@@ -4,6 +4,7 @@ export default function PageContainer({ children, pageParams }: { children: Reac
   return (
     <main
       className="
+        glass
         h-[73vh] overflow-y-auto rounded-2xl
         bg-(--color-bg) bg-opacity-30 
         backdrop-blur-md

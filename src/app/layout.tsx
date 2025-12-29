@@ -18,23 +18,25 @@ export default async function RootLayout({ children }: { children: React.ReactNo
 
   return (
     <html lang={lang} data-theme={theme}>
-      <body className="min-h-screen text-(--text)">
-        
-        {/* fondo dinámico por theme */}
-        <VideoBackground />
-
+      <body
+        className="min-h-screen"
+        style={{
+          color: "var(--text)",
+          backgroundImage: "var(--bg-page)",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+        }}
+      >
         <div className="flex flex-col">
           <div className="mx-[2%] md:mx-[15%]">
             <PageContainer pageParams={pageParams}>
-              {children}
+            {children}
             </PageContainer>
-
             <FooterLinks pageParams={pageParams} />
           </div>
-
           <Navbar pageParams={pageParams} />
         </div>
-
       </body>
     </html>
   );
