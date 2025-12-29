@@ -1,20 +1,36 @@
-"use client";
+'use client';
 
 import { useState, useEffect } from "react";
-import { useRouter } from "next/navigation";
 import { Icon } from "@iconify/react";
 
 import { LANGUAGES } from "@src/configuration/languages.config";
 import { getProfileData } from "@src/mock/index.mock";
 import { QuickActionItem, QuickActionMenu } from "./QuickActionMenu";
 import { THEMES } from "@src/configuration/themes.config";
-import { PageParams } from "@src/types/page.types";
 
-export default function FooterLinks({ pageParams }: { pageParams: PageParams }) {
+import { setPreferredLang, getPreferredLang } from '@src/utils/language';
+import { setPreferredTheme } from '@src/utils/theme';
+
+export default function FooterLinks() {
   const [themeOpen, setThemeOpen] = useState(false);
   const [langOpen, setLangOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
-  useEffect(() => setMounted(true), []);
+
+  const [lang, setLang] = useState('en'); // estado dinámico para idioma
+
+  useEffect(() => {
+    setMounted(true);
+    setLang(getPreferredLang()); // inicializa desde localStorage/cookie al montar
+  }, []);
+
+  const changeLang = (selected: string) => {
+    setPreferredLang(selected); // guarda en localStorage/cookie
+    setLang(selected); // dispara re-render para actualizar UI
+  };
+
+  const changeTheme = (selected: "light" | "dark" | "system") => {
+    setPreferredTheme(selected);
+  };
 
   const languageActions: QuickActionItem[] = LANGUAGES.map((l) => ({
     key: l.code,
@@ -23,31 +39,15 @@ export default function FooterLinks({ pageParams }: { pageParams: PageParams }) 
     onClick: () => changeLang(l.code),
   }));
 
-  const themeActions: QuickActionItem[] = THEMES[pageParams.lang].map((l) => ({
+  const themeActions: QuickActionItem[] = THEMES[lang].map((l) => ({
     key: l.code,
     label: l.label,
     icon: l.icon,
     onClick: () => changeTheme(l.code),
   }));
 
-  const profile = getProfileData(pageParams.lang);
+  const profile = getProfileData(lang);
   const socialMedia = profile.socialMedia.filter((sm) => sm.showInFooterLinks);
-
-  const router = useRouter();
-  const changeLang = (selected: string) => {
-    document.cookie = `lang=${selected}; path=/`;
-    router.refresh();
-  };
-  const changeTheme = (selected: "light" | "dark" | "system") => {
-    document.cookie = `theme=${selected}; path=/`;
-    if (selected === "system") {
-      const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-      document.documentElement.setAttribute("data-theme", prefersDark ? "dark" : "light");
-    } else {
-      document.documentElement.setAttribute("data-theme", selected);
-    }
-  };
-
 
   if (!mounted) return null;
   return (

@@ -1,15 +1,16 @@
 'use client';
 import { useEffect } from "react";
 
-export function ThemeInitializer({ initialTheme }: { initialTheme: string }) {
+export default function ThemeInitializer() {
   useEffect(() => {
-    if (initialTheme === "system") {
-      const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-      document.documentElement.setAttribute('data-theme', prefersDark ? "dark" : "light");
-    } else {
-      document.documentElement.setAttribute('data-theme', initialTheme);
-    }
-  }, [initialTheme]);
+    const storedTheme = localStorage.getItem("theme") || "system";
+
+    const themeToApply = storedTheme === "system"
+      ? (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light")
+      : storedTheme;
+
+    document.documentElement.setAttribute("data-theme", themeToApply);
+  }, []);
 
   return null;
 }

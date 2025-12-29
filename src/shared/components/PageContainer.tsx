@@ -1,6 +1,5 @@
-import { PageParams } from "@src/types/page.types";
 
-export default function PageContainer({ children, pageParams }: { children: React.ReactNode, pageParams: PageParams}) {
+export default function PageContainer({ children}: { children: React.ReactNode}) {
   return (
     <main
       className="

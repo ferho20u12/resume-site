@@ -1,10 +1,19 @@
+'use client';
+import { useState, useEffect } from 'react';
 import Link from "next/link";
 import { NAVIGATION } from "@src/configuration/navigation.config";
 import { Icon } from "@iconify/react";
-import { PageParams } from "@src/types/page.types";
+import { getPreferredLang } from '@src/utils/language';
 
-export default function Navbar({ pageParams }: { pageParams: PageParams }) {
-  const items = NAVIGATION[pageParams.lang];
+export default function Navbar() {
+  const [lang, setLang] = useState('en');
+
+  useEffect(() => {
+    setLang(getPreferredLang()); 
+  }, []);
+
+  const items = NAVIGATION[lang];
+
 
   return (
     <nav
