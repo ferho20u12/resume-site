@@ -47,8 +47,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   const cookieStore = await cookies();
   const lang = LANGUAGES.find(l => l.code === (cookieStore.get("lang")?.value ?? ""))?.code ?? "en";
   const cookieTheme = cookieStore.get("theme")?.value ?? "system";
-  const initialTheme = THEMES[lang].find(t => t.code === (cookieTheme)) ? "system" : cookieTheme;
-
+  const initialTheme = THEMES[lang].find(t => t.code === (cookieTheme)) ? cookieTheme : "system";
   const pageParams: PageParams = { lang, theme: cookieTheme };
 
   return (
