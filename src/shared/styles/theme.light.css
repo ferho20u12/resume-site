@@ -1,10 +1,10 @@
 [data-theme='light'] {
-  --bg-page: url('/img/bg-light.jpg'); /* ✅ desde public/, con / al inicio */
+  --bg-page: url('/img/bg-light.jpg');
   --text: var(--gray-800);
   --text-soft: var(--gray-500);
   
-  --surface: rgba(255, 255, 255, 0.45);
-  --surface-border: rgba(255, 255, 255, 0.8);
+  --surface: rgba(233, 221, 221, 0.45);
+  --surface-border: rgba(0, 0, 0, 0.8);
 
   --accent: var(--red-500);
   --accent-hover: var(--red-700);

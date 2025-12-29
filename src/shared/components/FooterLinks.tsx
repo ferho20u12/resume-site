@@ -38,11 +38,18 @@ export default function FooterLinks({ pageParams }: { pageParams: PageParams }) 
     document.cookie = `lang=${selected}; path=/`;
     router.refresh();
   };
-  const changeTheme = (selected: string) => {
+  const changeTheme = (selected: "light" | "dark" | "system") => {
     document.cookie = `theme=${selected}; path=/`;
-    router.refresh();
+    if (selected === "system") {
+      const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+      document.documentElement.setAttribute("data-theme", prefersDark ? "dark" : "light");
+    } else {
+      document.documentElement.setAttribute("data-theme", selected);
+    }
   };
 
+
+  if (!mounted) return null;
   return (
     <footer
       className="
@@ -82,8 +89,6 @@ export default function FooterLinks({ pageParams }: { pageParams: PageParams }) 
           ))}
         </div>
       </section>
-
-      {/* CONTROLS */}
       {mounted && (
         <section id="controls" className="flex gap-4">
           <QuickActionMenu

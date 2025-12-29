@@ -7,7 +7,7 @@ export default function VideoBackground() {
       muted
       playsInline
       preload="none"
-      poster="/background-light.webp" // depende el theme, lo vemos abajo
+      poster="/background-light.webp"
     >
       <source src="/background-light.mp4" type="video/mp4" />
     </video>
