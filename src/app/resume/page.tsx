@@ -1,8 +1,8 @@
+import Card from "@src/shared/components/Card"
+
 export default function ResumePage() {
   return (
-    <div>
-      Resume
-    </div>
+    <Card nameSeccion="resume" mode="full"></Card>
   );
 }
 

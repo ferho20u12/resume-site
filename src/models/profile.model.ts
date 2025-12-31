@@ -5,7 +5,9 @@ export interface Profile {
   name: string;
   about: string;
   bornDate:Date;
+  locationName:string;
+  locationLink:string;
   profileImageLink: string;
-  profileCoverLink: string;
+  coverImageLink: string;
   socialMedia: SocialMedia[];
 }

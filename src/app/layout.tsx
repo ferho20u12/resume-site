@@ -3,10 +3,11 @@ import PageContainer from "@src/shared/components/PageContainer";
 import FooterLinks from "@src/shared/components/FooterLinks";
 import Navbar from "@src/shared/components/Navbar";
 import ThemeInitializer from "@src/shared/components/ThemeInitializer";
+import { DEFAULT_LANGUAGE } from '@src/configuration/languages.config';
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="es">
+    <html lang={DEFAULT_LANGUAGE}>
       <body
         className="min-h-screen"
         style={{

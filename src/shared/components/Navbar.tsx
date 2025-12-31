@@ -2,11 +2,12 @@
 import { useState, useEffect } from 'react';
 import Link from "next/link";
 import { NAVIGATION } from "@src/configuration/navigation.config";
+import {DEFAULT_LANGUAGE} from "@src/configuration/languages.config"
 import { Icon } from "@iconify/react";
 import { getPreferredLang } from '@src/utils/language';
 
 export default function Navbar() {
-  const [lang, setLang] = useState('en');
+  const [lang, setLang] = useState(DEFAULT_LANGUAGE)
 
   useEffect(() => {
     setLang(getPreferredLang()); 

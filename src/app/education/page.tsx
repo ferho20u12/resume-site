@@ -1,8 +1,7 @@
+import Card from "@src/shared/components/Card"
 export default function EducationPage() {
   return (
-    <div>
-      Education
-    </div>
+    <Card nameSeccion="education" mode="full"></Card>
   );
 }
 

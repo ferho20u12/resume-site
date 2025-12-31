@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { Icon } from "@iconify/react";
 
-import { LANGUAGES } from "@src/configuration/languages.config";
+import { LANGUAGES, DEFAULT_LANGUAGE } from "@src/configuration/languages.config";
 import { getProfileData } from "@src/mock/index.mock";
 import { QuickActionItem, QuickActionMenu } from "./QuickActionMenu";
 import { THEMES } from "@src/configuration/themes.config";
@@ -16,19 +16,19 @@ export default function FooterLinks() {
   const [langOpen, setLangOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
 
-  const [lang, setLang] = useState('en'); // estado dinámico para idioma
+  const [lang, setLang] = useState(DEFAULT_LANGUAGE);
 
   useEffect(() => {
     setMounted(true);
-    setLang(getPreferredLang()); // inicializa desde localStorage/cookie al montar
+    setLang(getPreferredLang()); 
   }, []);
 
   const changeLang = (selected: string) => {
-    setPreferredLang(selected); // guarda en localStorage/cookie
-    setLang(selected); // dispara re-render para actualizar UI
+    setPreferredLang(selected);
+    setLang(selected);
   };
 
-  const changeTheme = (selected: "light" | "dark" | "system") => {
+  const changeTheme = (selected: string) => {
     setPreferredTheme(selected);
   };
 

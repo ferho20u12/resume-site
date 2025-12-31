@@ -1,8 +1,10 @@
 export type Language = {
-  code: "es" | "en";
-  label: string;
-  icon: string;
+  code:   string;
+  label:  string;
+  icon:   string;
 };
+
+export const DEFAULT_LANGUAGE: Language["code"] = "en";
 
 export const LANGUAGES: Language[] = [
   { code: "es", label: "Español", icon: "emojione-v1:flag-for-mexico" },

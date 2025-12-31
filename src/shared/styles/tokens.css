@@ -30,5 +30,5 @@
 
   /* Shadows / Borders */
   --radius: 20px;
-  --shadow-glass: 0 4px 32px rgba(0, 0, 0, 1);
+  --shadow-glass: 10px 5px 15px rgba(0, 0, 0, 1);
 }

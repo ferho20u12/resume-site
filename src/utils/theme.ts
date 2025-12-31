@@ -1,5 +1,5 @@
 // utils/theme.ts
-export function setPreferredTheme(theme: "light" | "dark" | "system") {
+export function setPreferredTheme(theme: string) {
   localStorage.setItem('theme', theme);
   document.cookie = `theme=${theme}; path=/;`;
 
@@ -11,8 +11,15 @@ export function setPreferredTheme(theme: "light" | "dark" | "system") {
   document.documentElement.setAttribute("data-theme", themeToApply);
 }
 
-export function getPreferredTheme(): "light" | "dark" | "system" {
-  return (localStorage.getItem('theme') as "light" | "dark" | "system")
-    || (document.cookie.replace(/(?:(?:^|.*;\s*)theme\s*\=\s*([^;]*).*$)|^.*$/, "$1") as "light" | "dark" | "system")
-    || "system";
+export function getPreferredTheme(): string {
+  if (typeof window === "undefined") return "system";
+
+  return (
+    (localStorage.getItem("theme") as string) ||
+    (document.cookie.replace(
+      /(?:(?:^|.*;\s*)theme\s*\=\s*([^;]*).*$)|^.*$/,
+      "$1"
+    ) as string) ||
+    "system"
+  );
 }

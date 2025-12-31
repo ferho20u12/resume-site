@@ -1,8 +1,7 @@
+import Card from "@src/shared/components/Card"
 export default function ExperiencePage() {
   return (
-    <div>
-      Experience
-    </div>
+    <Card nameSeccion="experience" mode="full"></Card>
   );
 }
 

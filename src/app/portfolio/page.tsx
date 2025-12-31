@@ -1,8 +1,8 @@
+import Card from "@src/shared/components/Card"
+
 export default function PortfolioPage() {
   return (
-    <div>
-      Portafolio
-    </div>
+    <Card nameSeccion="portfolio" mode="full"></Card>
   );
 }
 
