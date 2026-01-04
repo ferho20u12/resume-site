@@ -8,7 +8,6 @@ import { getPreferredLang } from "@src/utils/language";
 
 import ProfileHeader from "./ProfileHeader";
 import ProfileInfo from "./ProfileInfo";
-import ProfileSocials from "./ProfileSocials";
 import ProfileBio from "./ProfileBio";
 
 export default function ProfilePage() {
@@ -29,49 +28,36 @@ export default function ProfilePage() {
 
   return (
     <Card cardProps={{ nameSeccion: "profile", mode: "full" }}>
-      {/* HEADER */}
+      {/* HEADER (cover + avatar + socials) */}
       <ProfileHeader
         coverVideos={profile.coverMediaByTheme}
         avatarUrl={profile.avatarUrl}
+        socials={socialMedia}
       />
 
-      {/* INFO + SOCIALS */}
+      {/* CONTENT */}
       <div
         className="
-          mt-20 md:mt-4
+          mt-20 md:mt-0
           px-6
+          md:px-15
           flex
-          flex-col md:flex-row
+          flex-col
           items-center md:items-start
           gap-6
         "
       >
-        {/* SOCIALS */}
-        <div
-          className="
-            order-1 md:order-2
-            flex justify-center
-            md:self-start md:pl-4
-          "
-        >
-          <ProfileSocials socials={socialMedia} />
-        </div>
+        <ProfileInfo
+          fullName={profile.fullName}
+          professionalTitle={profile.professionalTitle}
+          birthDate={profile.birthDate}
+          locationName={profile.location.name}
+          locationMapUrl={profile.location.mapUrl}
+        />
 
-        {/* INFO */}
-        <div className="order-2 md:order-1">
-          <ProfileInfo
-            fullName={profile.fullName}
-            professionalTitle={profile.professionalTitle}
-            birthDate={profile.birthDate}
-            locationName={profile.location.name}
-            locationMapUrl={profile.location.mapUrl}
-          />
-        </div>
       </div>
-
-
       {/* BIO */}
-      {/* <ProfileBio bio={profile.bio} /> */}
+      <ProfileBio bio={profile.bio} />
     </Card>
   );
 }
