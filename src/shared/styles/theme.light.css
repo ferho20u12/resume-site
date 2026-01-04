@@ -8,4 +8,9 @@
 
   --accent: var(--red-500);
   --accent-hover: var(--red-700);
+  
+}
+
+[data-theme='dark'] .light {
+  display: none;
 }

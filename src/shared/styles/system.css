@@ -1,0 +1,11 @@
+@media (prefers-color-scheme: dark) {
+  [data-theme='system'] .light {
+    display: none;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  [data-theme='system'] .dark {
+    display: none;
+  }
+}
