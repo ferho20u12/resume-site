@@ -27,7 +27,7 @@ export default function ProfilePage() {
   );
 
   return (
-    <Card cardProps={{ nameSeccion: "profile", mode: "full" }}>
+    <Card cardProps={{ nameSeccion: "profile", mode: "auto" }}>
       {/* HEADER (cover + avatar + socials) */}
       <ProfileHeader
         coverVideos={profile.coverMediaByTheme}

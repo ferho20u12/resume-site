@@ -25,7 +25,9 @@ export default function Card({
         ${sizingClass}
       `}
     >
+    <div className="mb-6">
       {children}
+    </div>
     </section>
   );
 }
