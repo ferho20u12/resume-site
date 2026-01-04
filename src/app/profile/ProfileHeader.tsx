@@ -22,12 +22,10 @@ export default function ProfileHeader({
 }: ProfileHeaderProps) {
   return (
     <div className="relative">
-      {/* COVER */}
-      <div className="h-[25vh] md:h-[28vh]">
+     
+      <div className="h-[25vh] md:h-[30vh]">
         <CoverMedia coverVideos={coverVideos} />
       </div>
-
-      {/* AVATAR + SOCIALS */}
       <div
         className="
           absolute
@@ -40,13 +38,12 @@ export default function ProfileHeader({
           items-center
         "
       >
-        {/* AVATAR (FIRST IN MOBILE) */}
         <div
           className="
             w-28 h-28 md:w-40 md:h-40
             rounded-full
             overflow-hidden
-            border-4
+            border
             border-(--cover-border-color)
             bg-black
           "
@@ -57,8 +54,6 @@ export default function ProfileHeader({
             className="w-full h-full object-cover"
           />
         </div>
-
-        {/* SOCIALS */}
         <div
           className="
             mt-3 md:mt-0

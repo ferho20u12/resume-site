@@ -1,10 +1,11 @@
 [data-theme='light'] {
-  --bg-page: url('/img/bg-light.jpg');
+  /* --bg-page: url('/img/bg-light.jpg'); */
+  --bg-page: url('https://cdn.pixabay.com/photo/2022/12/15/20/28/snow-7658489_1280.jpg');
   --text: var(--gray-800);
   --text-soft: var(--gray-500);
   
   --surface: rgba(233, 221, 221, 0.45);
-  --surface-border: rgba(0, 0, 0, 0.8);
+  --surface-border: rgba(0, 0, 0, 0.5x);
 
   --accent: var(--red-500);
   --accent-hover: var(--red-700);

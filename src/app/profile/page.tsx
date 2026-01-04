@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import Card from "@src/shared/components/Card";
 import { DEFAULT_LANGUAGE } from "@src/configuration/languages.config";
 import { PROFILE_DATA } from "@src/mock/profile.mock";
-import { getPreferredLang } from "@src/utils/language";
+import { getPreferredLang, calculateAge,formatAge} from "@src/utils/language";
 
 import ProfileHeader from "./ProfileHeader";
 import ProfileInfo from "./ProfileInfo";
@@ -26,38 +26,28 @@ export default function ProfilePage() {
     (sm) => sm.visibility.profile
   );
 
-  return (
-    <Card cardProps={{ nameSeccion: "profile", mode: "auto" }}>
-      {/* HEADER (cover + avatar + socials) */}
-      <ProfileHeader
-        coverVideos={profile.coverMediaByTheme}
-        avatarUrl={profile.avatarUrl}
-        socials={socialMedia}
-      />
+  const ageFomatted = formatAge(lang,calculateAge(profile.birthDate))
 
-      {/* CONTENT */}
-      <div
-        className="
-          mt-20 md:mt-0
-          px-6
-          md:px-15
-          flex
-          flex-col
-          items-center md:items-start
-          gap-6
-        "
-      >
-        <ProfileInfo
-          fullName={profile.fullName}
-          professionalTitle={profile.professionalTitle}
-          birthDate={profile.birthDate}
-          locationName={profile.location.name}
-          locationMapUrl={profile.location.mapUrl}
+  return (
+    <Card cardProps={{ nameSeccion: "profile", mode: "full" }}>      
+        <ProfileHeader
+          coverVideos={profile.coverMediaByTheme}
+          avatarUrl={profile.avatarUrl}
+          socials={socialMedia}
         />
 
-      </div>
-      {/* BIO */}
-      <ProfileBio bio={profile.bio} />
+        <div className=" mt-20 md:mt-0 px-6 md:px-15 flex flex-col items-center md:items-start gap-6">
+          <ProfileInfo
+            fullName={profile.fullName}
+            professionalTitle={profile.professionalTitle}
+            ageFomatted={ageFomatted}
+            locationName={profile.location.name}
+            locationMapUrl={profile.location.mapUrl}
+          />
+        </div>        
+        <div className="p-2">
+          <ProfileBio bio={profile.bio} />
+        </div>
     </Card>
   );
 }
