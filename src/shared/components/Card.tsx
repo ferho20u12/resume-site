@@ -3,10 +3,10 @@ type CardProps = {
   mode?: "full" | "auto";
 };
 
-export default function Card({
-  nameSeccion,
-  mode = "auto"
-}: CardProps) {
+export default function Card({ 
+  children ,
+  cardProps: { nameSeccion, mode = "auto"}
+}: {cardProps : CardProps ,children: React.ReactNode}) {
 
   const sizingClass =
     mode === "full"
@@ -25,7 +25,7 @@ export default function Card({
         ${sizingClass}
       `}
     >
-      {/* contenido */}
+      {children}
     </section>
   );
 }

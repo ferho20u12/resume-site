@@ -20,7 +20,7 @@ export default function FooterLinks() {
 
   useEffect(() => {
     setMounted(true);
-    setLang(getPreferredLang()); 
+    setLang(DEFAULT_LANGUAGE); 
   }, []);
 
   const changeLang = (selected: string) => {

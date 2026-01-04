@@ -8,6 +8,6 @@ export interface Profile {
   locationName:string;
   locationLink:string;
   profileImageLink: string;
-  coverImageLink: string;
+  coverVideoLink: Record<string, string>;
   socialMedia: SocialMedia[];
 }

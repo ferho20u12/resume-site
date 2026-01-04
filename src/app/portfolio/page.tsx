@@ -1,8 +1,12 @@
-import Card from "@src/shared/components/Card"
+import Card from "@src/shared/components/Card";
 
 export default function PortfolioPage() {
   return (
-    <Card nameSeccion="portfolio" mode="full"></Card>
+    <Card cardProps={{ nameSeccion: "portfolio", mode: "full" }}>
+      <div>
+        
+      </div>
+    </Card> 
   );
 }
 

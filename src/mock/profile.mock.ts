@@ -9,7 +9,10 @@ export const PROFILE_DATA_EN: Profile = {
   locationName : "Área metropolitana de Guadalajara, México ",
   locationLink : "https://maps.app.goo.gl/hiCEsuk1ZVruq9bK8",
   profileImageLink: "https://media.licdn.com/dms/image/v2/D4E03AQExGXq63uHplA/profile-displayphoto-scale_400_400/B4EZs0wJudJgAg-/0/1766116597063?e=1768435200&v=beta&t=C2cIbCZLxfQ4VT-TYN8q6n3DXryzmtu2vaIJTPo4fxE",
-  coverImageLink: "https://media.licdn.com/dms/image/v2/D5616AQFtJSrs3LkyGQ/profile-displaybackgroundimage-shrink_350_1400/B56ZjtFih8G0AY-/0/1756324309925?e=1768435200&v=beta&t=Xnvl9zergHsg2KZ1b7wNDY9180_Nk414wRPH-F2g5c8",
+  coverVideoLink: {
+    light: "https://cdn.pixabay.com/video/2022/03/18/111179-689949805_large.mp4",
+    dark: "https://cdn.pixabay.com/video/2023/07/04/169951-842348732_large.mp4",
+  },
   socialMedia: getSocialMedia()
 };
 
@@ -21,7 +24,10 @@ export const PROFILE_DATA_ES: Profile = {
   locationName : "Área metropolitana de Guadalajara, México ",
   locationLink : "https://maps.app.goo.gl/hiCEsuk1ZVruq9bK8",
   profileImageLink: "https://media.licdn.com/dms/image/v2/D4E03AQExGXq63uHplA/profile-displayphoto-scale_400_400/B4EZs0wJudJgAg-/0/1766116597063?e=1768435200&v=beta&t=C2cIbCZLxfQ4VT-TYN8q6n3DXryzmtu2vaIJTPo4fxE",
-  coverImageLink: "https://media.licdn.com/dms/image/v2/D5616AQFtJSrs3LkyGQ/profile-displaybackgroundimage-shrink_350_1400/B56ZjtFih8G0AY-/0/1756324309925?e=1768435200&v=beta&t=Xnvl9zergHsg2KZ1b7wNDY9180_Nk414wRPH-F2g5c8",
+  coverVideoLink: {
+    light: "https://cdn.pixabay.com/video/2022/03/18/111179-689949805_large.mp4",
+    dark: "https://cdn.pixabay.com/video/2023/07/04/169951-842348732_large.mp4",
+  },
   socialMedia: getSocialMedia(),
 };
 
