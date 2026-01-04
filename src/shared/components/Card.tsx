@@ -22,10 +22,13 @@ export default function Card({
         bg-(--color-bg) bg-opacity-30
         backdrop-blur-md
         shadow-lg shadow-[rgba(0,0,0,0.25)]
-        ${sizingClass}
+        h-full
+        flex flex-col
+        min-h-0
       `}
     >
       {children}
     </section>
+
   );
 }
