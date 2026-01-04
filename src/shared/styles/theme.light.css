@@ -1,6 +1,5 @@
 [data-theme='light'] {
-  /* --bg-page: url('/img/bg-light.jpg'); */
-  --bg-page: url('https://cdn.pixabay.com/photo/2022/12/15/20/28/snow-7658489_1280.jpg');
+  --bg-page: url('/img/bg-light.jpg');
   --text: var(--gray-800);
   --text-soft: var(--gray-500);
   

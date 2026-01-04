@@ -5,8 +5,8 @@ const PROFILE_BIRTH_DATE : Date = new Date("2000-08-25");
 const PROFILE_AVATAR_URL : string = "https://media.licdn.com/dms/image/v2/D4E03AQExGXq63uHplA/profile-displayphoto-scale_400_400/B4EZs0wJudJgAg-/0/1766116597063?e=1768435200&v=beta&t=C2cIbCZLxfQ4VT-TYN8q6n3DXryzmtu2vaIJTPo4fxE";
 const PROFILE_LOCATION_MAP_URL : string = "https://maps.app.goo.gl/hiCEsuk1ZVruq9bK8";
 const PROFILE_COVER_MEDIA_BY_THEME: Record<string, string> = {
-    light: "https://cdn.pixabay.com/video/2023/11/30/191443-890121806_large.mp4",
-    dark: "https://cdn.pixabay.com/video/2023/07/04/169951-842348732_large.mp4",
+    light: "/video/profile-cover-light.webm",
+    dark: "/video/profile-cover-dark.webm",
 };
 const PROFILE_SOCIAL_LINKS: SocialLink[] = [
     {
