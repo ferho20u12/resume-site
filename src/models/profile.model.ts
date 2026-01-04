@@ -1,13 +1,15 @@
-import {SocialMedia} from "./social-media.model"
+import {SocialLink} from "./social-link.model"
 
 export interface Profile {
-  title: string;
-  name: string;
-  about: string;
-  bornDate:Date;
-  locationName:string;
-  locationLink:string;
-  profileImageLink: string;
-  coverVideoLink: Record<string, string>;
-  socialMedia: SocialMedia[];
+  fullName: string;
+  professionalTitle: string;
+  bio: string;
+  birthDate: Date;
+  location: {
+    name: string;
+    mapUrl?: string;
+  };
+  avatarUrl: string;
+  coverMediaByTheme: Record<string, string>;
+  socialLinks: SocialLink[];
 }

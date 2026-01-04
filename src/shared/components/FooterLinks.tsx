@@ -3,13 +3,14 @@
 import { useState, useEffect } from "react";
 import { Icon } from "@iconify/react";
 
+import  PROFILE_DATA  from "@src/mock/profile.mock";
 import { LANGUAGES, DEFAULT_LANGUAGE } from "@src/configuration/languages.config";
-import { getProfileData } from "@src/mock/index.mock";
 import { QuickActionItem, QuickActionMenu } from "./QuickActionMenu";
 import { THEMES } from "@src/configuration/themes.config";
 
-import { setPreferredLang, getPreferredLang } from '@src/utils/language';
+import { setPreferredLang, getPreferredLang} from '@src/utils/language';
 import { setPreferredTheme } from '@src/utils/theme';
+
 
 export default function FooterLinks() {
   const [themeOpen, setThemeOpen] = useState(false);
@@ -46,8 +47,7 @@ export default function FooterLinks() {
     onClick: () => changeTheme(l.code),
   }));
 
-  const profile = getProfileData(lang);
-  const socialMedia = profile.socialMedia.filter((sm) => sm.showInFooterLinks);
+  const socialMedia = PROFILE_DATA[lang].socialLinks.filter((sm) => sm.visibility.footer);
 
   if (!mounted) return null;
   return (
@@ -64,10 +64,10 @@ export default function FooterLinks() {
       {/* SOCIAL */}
       <section id="social-media">
         <div className="flex flex-row items-center gap-4 flex-wrap">
-          {socialMedia.map(({ link, icon, name }) => (
+          {socialMedia.map(({ url, iconName, platform }) => (
             <a
-              key={name}
-              href={link}
+              key={platform}
+              href={url}
               target="_blank"
               rel="noopener noreferrer"
               className="transition-colors"
@@ -76,7 +76,7 @@ export default function FooterLinks() {
               }}
             >
               <Icon
-                icon={icon}
+                icon={iconName}
                 className="
                   text-[32px] sm:text-3xl md:text-4xl lg:text-5xl
                   leading-none
