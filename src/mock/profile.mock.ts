@@ -2,7 +2,7 @@ import { Profile, Location } from "@src/models/profile.model";
 import { SocialLink} from "@src/models/social-link.model";
 
 const PROFILE_BIRTH_DATE : Date = new Date("2000-08-25");
-const PROFILE_AVATAR_URL : string = "https://media.licdn.com/dms/image/v2/D4E03AQExGXq63uHplA/profile-displayphoto-scale_400_400/B4EZs0wJudJgAg-/0/1766116597063?e=1768435200&v=beta&t=C2cIbCZLxfQ4VT-TYN8q6n3DXryzmtu2vaIJTPo4fxE";
+const PROFILE_AVATAR_URL : string = "/img/profile/avatar-logo.jpg";
 
 const PROFILE_COVER_MEDIA_BY_THEME: Record<string, string> = {
     light: "/video/profile-cover-light.webm",
