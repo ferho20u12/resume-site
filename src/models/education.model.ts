@@ -1,4 +1,4 @@
-export interface AcademicExperience {
+export interface Education {
   id: number;
   name: string;
   isCertification: boolean;

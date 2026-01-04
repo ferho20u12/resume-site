@@ -1,7 +1,13 @@
 export interface Skill {
   id: number;
   name: string;
-  level?: string;
-  years?: number;
-  notes?: string;
+  proficiency?: string;
+  experienceYears?: number;
+  details?: string;
+}
+
+export interface SkillCategory {
+  id: number;
+  name: string;
+  skills: Skill[];
 }

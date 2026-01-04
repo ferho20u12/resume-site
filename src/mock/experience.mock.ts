@@ -24,7 +24,7 @@ const COMPANIES_LINKS: Record<CompanyId, string> = {
 const getLogo = (companyId: CompanyId) => COMPANIES_LOGOS[companyId] || null;
 const getLink = (companyId: CompanyId) => COMPANIES_LINKS[companyId] || null;
 
-export const EXPERIENCE_TITLE: Record<string, string> = {
+export const EXPERIENCE_SECTION_TITLE: Record<string, string> = {
     en : "Experience",
     es : "Experiencia",
 }
