@@ -5,11 +5,13 @@ export interface Profile {
   professionalTitle: string;
   bio: string;
   birthDate: Date;
-  location: {
-    name: string;
-    mapUrl?: string;
-  };
+  location: Location;
   avatarUrl: string;
   coverMediaByTheme: Record<string, string>;
   socialLinks: SocialLink[];
+}
+
+export interface Location {
+  name: string;
+  mapUrl?: string;
 }
