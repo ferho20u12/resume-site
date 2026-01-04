@@ -16,7 +16,7 @@ export default function ProfileBio({ bio }: ProfileBioProps) {
         bg-(--surface)
       "
     >
-      <p className="text-md leading-relaxed">
+      <p className="text-lg leading-relaxed">
         {bio}
       </p>
     </div>

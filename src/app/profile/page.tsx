@@ -49,16 +49,16 @@ export default function ProfilePage() {
         {/* SOCIALS */}
         <div
           className="
-            order-1 md:order-0
+            order-1 md:order-2
             flex justify-center
-            md:self-start md:mt-6
+            md:self-start md:pl-4
           "
         >
           <ProfileSocials socials={socialMedia} />
         </div>
 
         {/* INFO */}
-        <div className="order-2 md:order-0">
+        <div className="order-2 md:order-1">
           <ProfileInfo
             fullName={profile.fullName}
             professionalTitle={profile.professionalTitle}
@@ -71,7 +71,7 @@ export default function ProfilePage() {
 
 
       {/* BIO */}
-      <ProfileBio bio={profile.bio} />
+      {/* <ProfileBio bio={profile.bio} /> */}
     </Card>
   );
 }
