@@ -1,11 +1,25 @@
+type EducationType =
+  | "degree"
+  | "certification"
+  | "bootcamp"
+  | "course"
+  | "diploma";
+
+interface Institution {
+  name: string;
+  website?: string;
+  logoUrl?: string;
+}
+interface EducationPeriod {
+  startDate: Date;
+  endDate?: Date;
+}
+
 export interface Education {
   id: number;
-  name: string;
-  isCertification: boolean;
-  institutionName: string;
-  institutionLink: string;
-  institutionPhotoLink: string;  
-  startDate: string;
-  endDate: string | null;
-  summary: string;
+  title: string;
+  type: EducationType;
+  institution: Institution;
+  period: EducationPeriod;
+  description?: string;
 }
