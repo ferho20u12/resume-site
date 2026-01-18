@@ -18,13 +18,12 @@ export default function HorizontalScrollContainer({
   const [showLeft, setShowLeft] = useState(false);
   const [showRight, setShowRight] = useState(false);
 
-  // PARA LOS DOTS
   const [pages, setPages] = useState(0);
   const [activePage, setActivePage] = useState(0);
 
   const scroll = (direction: "left" | "right") => {
     if (!scrollRef.current) return;
-    const scrollAmount = 200;
+    const scrollAmount = scrollRef.current.clientWidth; // scroll por "pantalla"
     scrollRef.current.scrollBy({
       left: direction === "right" ? scrollAmount : -scrollAmount,
       behavior: "smooth",
@@ -39,7 +38,6 @@ export default function HorizontalScrollContainer({
       setShowLeft(el.scrollLeft > 0);
       setShowRight(el.scrollLeft + el.clientWidth < el.scrollWidth);
 
-      // PÁGINAS PARA DOTS
       const totalPages = Math.ceil(el.scrollWidth / el.clientWidth);
       setPages(totalPages);
 
@@ -60,9 +58,9 @@ export default function HorizontalScrollContainer({
   return (
     <div className={`relative w-full ${className}`}>
       {title && (
-        <div className="flex flex-col items-center mb-4">
+        <div className="flex flex-col items-center mb-5">
           <h3 className="text-lg font-semibold">{title}</h3>
-          <div className="mt-1 h-0.5 w-12 bg-(--accent) rounded-full" />
+          <div className="mt-1 h-0.5 w-14 bg-(--accent) rounded-full" />
         </div>
       )}
 
@@ -70,18 +68,18 @@ export default function HorizontalScrollContainer({
         {showLeft && (
           <button
             onClick={() => scroll("left")}
-            className="absolute left-0 top-1/2 -translate-y-1/2 z-20 p-2 bg-(--surface) hover:bg-(--surface-border) rounded-full shadow"
+            className="absolute left-0 top-1/2 -translate-y-1/2 z-20 p-2 bg-(--surface) hover:bg-(--surface-border) rounded-full shadow-sm transition duration-200"
           >
-            <Icon icon="mdi:chevron-left" width={24} height={24} />
+            <Icon icon="mdi:chevron-left" width={22} height={22} />
           </button>
         )}
 
         {showRight && (
           <button
             onClick={() => scroll("right")}
-            className="absolute right-0 top-1/2 -translate-y-1/2 z-20 p-2 bg-(--surface) hover:bg-(--surface-border) rounded-full shadow"
+            className="absolute right-0 top-1/2 -translate-y-1/2 z-20 p-2 bg-(--surface) hover:bg-(--surface-border) rounded-full shadow-sm transition duration-200"
           >
-            <Icon icon="mdi:chevron-right" width={24} height={24} />
+            <Icon icon="mdi:chevron-right" width={22} height={22} />
           </button>
         )}
 
@@ -104,20 +102,27 @@ export default function HorizontalScrollContainer({
             background: "var(--surface)",
           }}
         >
-          <div className={`flex gap-4 min-w-max ${!(showLeft || showRight) ? "justify-center" : ""}`}>
+          <div
+            className={`flex gap-4 min-w-max ${
+              !(showLeft || showRight) ? "justify-center" : ""
+            }`}
+            style={{ scrollSnapType: "x mandatory" }}
+          >
             {children}
           </div>
         </div>
       </div>
 
-      {/* DOTS (CAROUSEL) */}
+      {/* DOTS */}
       {pages > 1 && (
-        <div className="flex justify-center gap-2 mt-4">
+        <div className="flex justify-center gap-2 mt-5">
           {Array.from({ length: pages }).map((_, idx) => (
             <span
               key={idx}
-              className={`h-1.5 w-6 rounded-full transition-all ${
-                idx === activePage ? "bg-(--accent)" : "bg-(--surface-border)"
+              className={`h-2 w-8 rounded-full transition-all duration-200 ${
+                idx === activePage
+                  ? "bg-(--accent) w-10"
+                  : "bg-(--surface-border) w-6"
               }`}
             />
           ))}
