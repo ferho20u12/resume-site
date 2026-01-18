@@ -17,35 +17,32 @@ export default function ProfileInfo({
   locationMapUrl,
 }: ProfileInfoProps) {
   return (
-    <div className="flex flex-col items-center md:items-start gap-3 text-center md:text-left">
+    <div className="flex flex-col gap-2 text-center md:text-left">
       <h1 className="text-2xl md:text-4xl font-bold tracking-tight">
         {fullName}
       </h1>
-      <p className="text-base md:text-xl text-muted-foreground">
+
+      <p className="text-base md:text-lg text-muted-foreground">
         {professionalTitle}
       </p>
-      <div className="flex flex-col md:flex-row md:items-center gap-2 text-sm text-muted-foreground md:text-md">
-        <div className="flex items-center justify-center md:justify-start gap-1">
-          <Icon icon="mdi:cake-variant-outline" className="text-base" />
+
+      <div className="flex flex-wrap justify-center md:justify-start gap-3 text-sm text-muted-foreground">
+        <div className="flex items-center gap-1">
+          <Icon icon="mdi:cake-variant-outline" />
           <span>{ageFomatted}</span>
         </div>
-        <span className="hidden md:inline">•</span>
-        <div className="flex items-center justify-center md:justify-start gap-1">
-          <Icon icon="mdi:map-marker-outline" className="text-base" />
+        <div className="flex items-center gap-1">
+          <Icon icon="mdi:map-marker-outline" />
           {locationMapUrl ? (
-            <a
-              href={locationMapUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:underline underline-offset-2"
-            >
+            <a href={locationMapUrl} target="_blank" className="hover:underline">
               {locationName}
             </a>
           ) : (
-            <span>{locationName}</span>
+            locationName
           )}
         </div>
       </div>
     </div>
+
   );
 }

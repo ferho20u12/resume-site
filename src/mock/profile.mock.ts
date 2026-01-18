@@ -5,9 +5,11 @@ const PROFILE_BIRTH_DATE : Date = new Date("2000-08-25");
 const PROFILE_AVATAR_URL : string = "/img/profile/avatar-logo.jpg";
 
 const PROFILE_COVER_MEDIA_BY_THEME: Record<string, string> = {
-    light: "/video/profile-cover-light.webm",
-    dark: "/video/profile-cover-dark.webm",
-};
+    // light: "/video/profile-cover-light.webm",
+    light: "https://cdn.pixabay.com/video/2025/09/26/306487_large.mp4",
+    // dark: "/video/profile-cover-dark.webm",
+    dark:"https://cdn.pixabay.com/video/2025/07/22/292830_large.mp4"
+  };
 const PROFILE_SOCIAL_LINKS: SocialLink[] = [
     {
       platform: "github", 
@@ -63,7 +65,7 @@ export const PROFILE_DATA: Record<string, Profile> = {
   es: {
     fullName: "Fernando Gutierrez Romo",
     professionalTitle: "Programador Junior | Desarrollo de Software",
-    bio: "Soy un desarrollador junior con experiencia en desarrollo web y backend, apasionado por la programación modular y las buenas prácticas. Durante los últimos dos años me he enfocado principalmente en backend, trabajando con C# y Golang, pero disfruto tanto el frontend como el backend. Tengo experiencia con lenguajes tipados como Java y C#, y un gran interés en DevOps, especialmente con Docker y automatización de entornos. En mi tiempo libre disfruto pasear en bicicleta, jugar videojuegos y sueño con conocer países con climas fríos, como Canadá, para disfrutar de paisajes nevados.",
+    bio: "<p>Soy <strong>desarrollador de software</strong> con experiencia en desarrollo web y backend, enfocado en la construcción de soluciones <strong>limpias, modulares y escalables</strong>.</p><p>Durante los últimos años he trabajado principalmente en <strong>backend</strong>, utilizando tecnologías como <strong>C#</strong> y <strong>Golang</strong>, aplicando buenas prácticas y priorizando la <em>mantenibilidad del código</em>, aunque también disfruto el desarrollo frontend.</p><p>Cuento con experiencia en <strong>lenguajes tipados</strong> como <strong>Java</strong> y <strong>C#</strong>, y tengo un marcado interés en <strong>DevOps</strong>, especialmente en <strong>Docker</strong> y la <em>automatización de entornos</em>.</p><p>A nivel personal, disfruto <em>andar en bicicleta</em> y <em>jugar videojuegos</em>, y tengo el sueño de visitar países de <strong>climas fríos</strong> como <strong>Canadá</strong>, atraído por sus paisajes de <em>bosques</em>, su <em>gran fauna</em> y la posibilidad de presenciar <strong>auroras boreales</strong>.</p>",
     birthDate: PROFILE_BIRTH_DATE,
     location: PROFILE_LOCATION,
     avatarUrl: PROFILE_AVATAR_URL,
@@ -74,7 +76,7 @@ export const PROFILE_DATA: Record<string, Profile> = {
   en: {
     fullName: "Fernando Gutierrez",
     professionalTitle: "Junior Software Developer",
-    bio: "I am a junior software developer with experience in web and backend development, passionate about modular programming and best practices. Over the past two years, I have primarily focused on backend development using C# and Golang, while also enjoying working on frontend projects. I have experience with statically typed languages like Java and C#, and a strong interest in DevOps, particularly Docker and environment automation. In my free time, I enjoy cycling, playing video games, and dream of visiting cold countries like Canada to experience snowy landscapes.",
+    bio: "<p>I am a <strong>software developer</strong> with experience in web and backend development, focused on building <strong>clean, modular, and scalable solutions</strong>.</p><p>Over the past few years, I have worked mainly on <strong>backend development</strong> using technologies such as <strong>C#</strong> and <strong>Golang</strong>, applying best practices and prioritizing <em>code maintainability</em>, while also enjoying frontend development.</p><p>I have experience with <strong>strongly typed languages</strong> such as <strong>Java</strong> and <strong>C#</strong>, and I have a strong interest in <strong>DevOps</strong>, especially in <strong>Docker</strong> and <em>environment automation</em>.</p><p>On a personal level, I enjoy <em>cycling</em> and <em>playing video games</em>, and I dream of visiting <strong>cold-climate countries</strong> such as <strong>Canada</strong>, drawn by its <em>forest landscapes</em>, <em>rich wildlife</em>, and the possibility of witnessing <strong>aurora borealis</strong>.</p>",
     birthDate: PROFILE_BIRTH_DATE,
     location: PROFILE_LOCATION,
     avatarUrl: PROFILE_AVATAR_URL,

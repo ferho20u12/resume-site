@@ -29,6 +29,6 @@
   --gray-800: #2a2a2a;
 
   /* Shadows / Borders */
-  --radius: 20px;
-  --shadow-glass: 10px 5px 15px rgba(0, 0, 0, 1);
+  --radius: 15px;
+  --surface: rgba(255, 255, 255, 0.55);
 }

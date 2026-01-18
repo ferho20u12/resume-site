@@ -1,9 +1,7 @@
 export interface Skill {
   id: number;
   name: string;
-  proficiency?: string;
-  experienceYears?: number;
-  details?: string;
+  proficiency: string;
 }
 
 export interface SkillCategory {

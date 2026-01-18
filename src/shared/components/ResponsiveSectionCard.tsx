@@ -1,7 +1,7 @@
 "use client";
 
-import Card from "@src/shared/components/Card";
 import HorizontalScrollContainer from "@src/shared/components/HorizontalScrollContainer";
+import Card from "@src/shared/components/ui/Card";
 import React from "react";
 
 interface Section {
@@ -26,7 +26,7 @@ export default function ResponsiveSectionCard({
       {/* ---------------- Mobile ---------------- */}
       <div className="flex flex-col gap-4 md:hidden">
         {mobileSections.map((section, idx) => (
-          <Card key={idx} cardProps={{ nameSeccion: section.title, mode: "full" }}>
+          <Card key={idx} cardProps={{ nameSeccion: section.title}}>
             <HorizontalScrollContainer
               title={section.title}
               className="py-2 px-4"
@@ -39,7 +39,7 @@ export default function ResponsiveSectionCard({
 
       {/* ---------------- Desktop / Tablet ---------------- */}
       <div className="hidden md:block">
-        <Card cardProps={{ nameSeccion: desktopCard.title, mode: "full" }}>
+        <Card cardProps={{ nameSeccion: desktopCard.title}}>
           <div className="flex flex-col gap-6">
             {desktopCard.sections.map((section, idx) => (
               <HorizontalScrollContainer

@@ -17,3 +17,26 @@
   scrollbar-width: none; 
   -ms-overflow-style: none;
 }
+
+
+.scrollbar-hide {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.fade-overlay::after {
+  content: "";
+  position: sticky;
+  bottom: 0;
+  display: block;
+  height: 48px;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    var(--color-bg)
+  );
+  pointer-events: none;
+}
