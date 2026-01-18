@@ -1,24 +1,16 @@
 [data-theme='light'] {
-  /* Background */
-  --bg-page: url('https://cdn.pixabay.com/photo/2023/03/16/16/38/woods-7857082_1280.jpg');
+  --bg-page: url('/img/bg-light.jpg');
 
-  /* Text */
-  --text: #0f172a;            /* slate-900, mejor que negro puro */
-  --text-soft: #334155;       /* slate-600 */
+  --text: #0f172a;
+  --text-soft: #334155;
 
-  /* Surfaces (glass / bloom) */
   --surface: rgba(255, 255, 255, 0.55);
   --surface-border: rgba(255, 255, 255, 0.28);
 
-  /* Shadows */
   --shadow-glass:
     0 10px 30px rgba(15, 23, 42, 0.12),
     inset 0 1px 0 rgba(255, 255, 255, 0.45);
 
-  /* Accent (earthy, controlled) */
   --accent: var(--brown-500);
   --accent-hover: var(--brown-700);
-
-  /* Optional polish */
-  --noise: url('https://cdn.pixabay.com/photo/2020/03/21/11/57/texture-4953613_1280.jpg'); /* muy sutil, opcional */
 }

@@ -31,7 +31,7 @@ export default function EducationCard({ education }: EducationCardProps) {
           </a>
         )}
       </div>
-      <ExpandableText lines={5}>{education.description ?? ""}</ExpandableText>
+      <ExpandableText lines={5}>{description ?? ""}</ExpandableText>
       
     </div>
   );

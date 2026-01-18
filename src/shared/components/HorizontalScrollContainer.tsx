@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { Icon } from "@iconify/react";
 
 interface HorizontalScrollContainerProps {
@@ -15,6 +15,12 @@ export default function HorizontalScrollContainer({
   className = "",
 }: HorizontalScrollContainerProps) {
   const scrollRef = useRef<HTMLDivElement>(null);
+  const [showLeft, setShowLeft] = useState(false);
+  const [showRight, setShowRight] = useState(false);
+
+  // PARA LOS DOTS
+  const [pages, setPages] = useState(0);
+  const [activePage, setActivePage] = useState(0);
 
   const scroll = (direction: "left" | "right") => {
     if (!scrollRef.current) return;
@@ -25,6 +31,32 @@ export default function HorizontalScrollContainer({
     });
   };
 
+  useEffect(() => {
+    const el = scrollRef.current;
+    if (!el) return;
+
+    const check = () => {
+      setShowLeft(el.scrollLeft > 0);
+      setShowRight(el.scrollLeft + el.clientWidth < el.scrollWidth);
+
+      // PÁGINAS PARA DOTS
+      const totalPages = Math.ceil(el.scrollWidth / el.clientWidth);
+      setPages(totalPages);
+
+      const pageIndex = Math.round(el.scrollLeft / el.clientWidth);
+      setActivePage(pageIndex);
+    };
+
+    el.addEventListener("scroll", check);
+    window.addEventListener("resize", check);
+    check();
+
+    return () => {
+      el.removeEventListener("scroll", check);
+      window.removeEventListener("resize", check);
+    };
+  }, []);
+
   return (
     <div className={`relative w-full ${className}`}>
       {title && (
@@ -33,35 +65,64 @@ export default function HorizontalScrollContainer({
           <div className="mt-1 h-0.5 w-12 bg-(--accent) rounded-full" />
         </div>
       )}
+
       <div className="relative">
-        <button
-          onClick={() => scroll("left")}
-          className="absolute left-0 top-1/2 -translate-y-1/2 z-20 p-2 bg-(--surface) hover:bg-(--surface-border) rounded-full shadow"
-        >
-          <Icon icon="mdi:chevron-left" width={24} height={24} />
-        </button>
-        <button
-          onClick={() => scroll("right")}
-          className="absolute right-0 top-1/2 -translate-y-1/2 z-20 p-2 bg-(--surface) hover:bg-(--surface-border) rounded-full shadow"
-        >
-          <Icon icon="mdi:chevron-right" width={24} height={24} />
-        </button>
+        {showLeft && (
+          <button
+            onClick={() => scroll("left")}
+            className="absolute left-0 top-1/2 -translate-y-1/2 z-20 p-2 bg-(--surface) hover:bg-(--surface-border) rounded-full shadow"
+          >
+            <Icon icon="mdi:chevron-left" width={24} height={24} />
+          </button>
+        )}
+
+        {showRight && (
+          <button
+            onClick={() => scroll("right")}
+            className="absolute right-0 top-1/2 -translate-y-1/2 z-20 p-2 bg-(--surface) hover:bg-(--surface-border) rounded-full shadow"
+          >
+            <Icon icon="mdi:chevron-right" width={24} height={24} />
+          </button>
+        )}
+
         <div
           ref={scrollRef}
           className="overflow-x-auto scroll-smooth hide-scrollbar"
           style={{
-            WebkitMaskImage: `linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%)`,
+            WebkitMaskImage:
+              showLeft || showRight
+                ? `linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%)`
+                : undefined,
             WebkitMaskRepeat: "no-repeat",
             WebkitMaskSize: "100% 100%",
-            maskImage: `linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%)`,
+            maskImage:
+              showLeft || showRight
+                ? `linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%)`
+                : undefined,
             maskRepeat: "no-repeat",
             maskSize: "100% 100%",
             background: "var(--surface)",
           }}
         >
-          <div className="flex gap-4 min-w-max">{children}</div>
+          <div className={`flex gap-4 min-w-max ${!(showLeft || showRight) ? "justify-center" : ""}`}>
+            {children}
+          </div>
         </div>
       </div>
+
+      {/* DOTS (CAROUSEL) */}
+      {pages > 1 && (
+        <div className="flex justify-center gap-2 mt-4">
+          {Array.from({ length: pages }).map((_, idx) => (
+            <span
+              key={idx}
+              className={`h-1.5 w-6 rounded-full transition-all ${
+                idx === activePage ? "bg-(--accent)" : "bg-(--surface-border)"
+              }`}
+            />
+          ))}
+        </div>
+      )}
     </div>
   );
 }
