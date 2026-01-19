@@ -21,9 +21,7 @@ export default function Modal({ open, onClose, children }: ModalProps) {
     if (!open) return;
 
     const onKeyDown = (e: KeyboardEvent) => {
-      if (e.key === "Escape") {
-        onClose();
-      }
+      if (e.key === "Escape") onClose();
     };
 
     window.addEventListener("keydown", onKeyDown);
@@ -35,17 +33,22 @@ export default function Modal({ open, onClose, children }: ModalProps) {
   return createPortal(
     <div
       onClick={onClose}
-      className="fixed inset-0 z-9999 backdrop-blur-xl flex items-center justify-center"
+      className="
+        fixed inset-0 z-9999
+        backdrop-blur-lg bg-black/20
+        flex items-center justify-center
+      "
       style={{ color: "var(--text)" }}
     >
       <div
         onClick={(e) => e.stopPropagation()}
         className="
           bg-(--surface)
-          w-full md:w-[70%] lg:w-[40%]
-          max-h-[90vh]
+          w-full h-full
+          md:w-[70%] lg:w-[40%]
+          md:h-auto md:max-h-[90vh]
           flex flex-col
-          rounded-2xl
+          rounded-none md:rounded-2xl
           shadow-lg
         "
       >

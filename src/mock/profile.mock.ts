@@ -5,10 +5,8 @@ const PROFILE_BIRTH_DATE : Date = new Date("2000-08-25");
 const PROFILE_AVATAR_URL : string = "/img/profile/avatar-logo.jpg";
 
 const PROFILE_COVER_MEDIA_BY_THEME: Record<string, string> = {
-    // light: "/video/profile-cover-light.webm",
-    light: "https://cdn.pixabay.com/video/2025/09/26/306487_large.mp4",
-    // dark: "/video/profile-cover-dark.webm",
-    dark:"https://cdn.pixabay.com/video/2025/07/22/292830_large.mp4"
+    light: "/video/profile-cover-light.webm",
+    dark: "/video/profile-cover-dark.webm"
   };
 const PROFILE_SOCIAL_LINKS: SocialLink[] = [
     {
