@@ -17,17 +17,16 @@ export default function HorizontalScrollContainer({
   const scrollRef = useRef<HTMLDivElement>(null);
   const [showLeft, setShowLeft] = useState(false);
   const [showRight, setShowRight] = useState(false);
-
   const [pages, setPages] = useState(0);
   const [activePage, setActivePage] = useState(0);
 
+  const needsPadding = showLeft || showRight;
+
   const scroll = (direction: "left" | "right") => {
-    if (!scrollRef.current) return;
-    const scrollAmount = scrollRef.current.clientWidth; // scroll por "pantalla"
-    scrollRef.current.scrollBy({
-      left: direction === "right" ? scrollAmount : -scrollAmount,
-      behavior: "smooth",
-    });
+    const el = scrollRef.current;
+    if (!el) return;
+    const amount = el.clientWidth;
+    el.scrollBy({ left: direction === "right" ? amount : -amount, behavior: "smooth" });
   };
 
   useEffect(() => {
@@ -35,14 +34,20 @@ export default function HorizontalScrollContainer({
     if (!el) return;
 
     const check = () => {
-      setShowLeft(el.scrollLeft > 0);
-      setShowRight(el.scrollLeft + el.clientWidth < el.scrollWidth);
+      const maxScroll = el.scrollWidth - el.clientWidth;
+      const current = el.scrollLeft;
+
+      setShowLeft(current > 0);
+      setShowRight(current < maxScroll - 1);
 
       const totalPages = Math.ceil(el.scrollWidth / el.clientWidth);
       setPages(totalPages);
 
-      const pageIndex = Math.round(el.scrollLeft / el.clientWidth);
-      setActivePage(pageIndex);
+      if (current >= maxScroll - 2) {
+        setActivePage(totalPages - 1);
+      } else {
+        setActivePage(Math.floor(current / el.clientWidth));
+      }
     };
 
     el.addEventListener("scroll", check);
@@ -68,7 +73,7 @@ export default function HorizontalScrollContainer({
         {showLeft && (
           <button
             onClick={() => scroll("left")}
-            className="absolute left-0 top-1/2 -translate-y-1/2 z-20 p-2 bg-(--surface) hover:bg-(--surface-border) rounded-full shadow-sm transition duration-200"
+            className="absolute left-0 top-1/2 -translate-y-1/2 z-20 p-2 rounded-full bg-(--surface) hover:bg-(--surface-border) shadow-sm transition"
           >
             <Icon icon="mdi:chevron-left" width={22} height={22} />
           </button>
@@ -77,7 +82,7 @@ export default function HorizontalScrollContainer({
         {showRight && (
           <button
             onClick={() => scroll("right")}
-            className="absolute right-0 top-1/2 -translate-y-1/2 z-20 p-2 bg-(--surface) hover:bg-(--surface-border) rounded-full shadow-sm transition duration-200"
+            className="absolute right-0 top-1/2 -translate-y-1/2 z-20 p-2 rounded-full bg-(--surface) hover:bg-(--surface-border) shadow-sm transition"
           >
             <Icon icon="mdi:chevron-right" width={22} height={22} />
           </button>
@@ -85,27 +90,23 @@ export default function HorizontalScrollContainer({
 
         <div
           ref={scrollRef}
-          className="overflow-x-auto scroll-smooth hide-scrollbar"
+          className={`overflow-x-auto scroll-smooth hide-scrollbar ${needsPadding ? "px-10 md:px-14" : ""}`}
           style={{
-            WebkitMaskImage:
-              showLeft || showRight
-                ? `linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%)`
-                : undefined,
+            background: "var(--surface)",
+            WebkitMaskImage: needsPadding
+              ? "linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%)"
+              : undefined,
             WebkitMaskRepeat: "no-repeat",
             WebkitMaskSize: "100% 100%",
-            maskImage:
-              showLeft || showRight
-                ? `linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%)`
-                : undefined,
+            maskImage: needsPadding
+              ? "linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%)"
+              : undefined,
             maskRepeat: "no-repeat",
             maskSize: "100% 100%",
-            background: "var(--surface)",
           }}
         >
           <div
-            className={`flex gap-4 min-w-max ${
-              !(showLeft || showRight) ? "justify-center" : ""
-            }`}
+            className={`flex gap-4 min-w-max py-0.5 ${!needsPadding ? "justify-center" : ""}`}
             style={{ scrollSnapType: "x mandatory" }}
           >
             {children}
@@ -113,16 +114,13 @@ export default function HorizontalScrollContainer({
         </div>
       </div>
 
-      {/* DOTS */}
       {pages > 1 && (
         <div className="flex justify-center gap-2 mt-5">
           {Array.from({ length: pages }).map((_, idx) => (
             <span
               key={idx}
-              className={`h-2 w-8 rounded-full transition-all duration-200 ${
-                idx === activePage
-                  ? "bg-(--accent) w-10"
-                  : "bg-(--surface-border) w-6"
+              className={`h-2 rounded-full transition-all duration-200 ${
+                idx === activePage ? "bg-(--accent) w-10" : "bg-(--surface-border) w-6"
               }`}
             />
           ))}

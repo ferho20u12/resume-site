@@ -2,7 +2,7 @@
 
 import { DEFAULT_LANGUAGE } from "@src/configuration/languages.config";
 import { PROFILE_DATA } from "@src/mock/profile.mock";
-import Card from "@src/shared/components/ui/Card";
+import Card from "@src/shared/components/ui/cards/Card";
 import { calculateAge, formatAge, getPreferredLang } from "@src/utils/language";
 import { useEffect, useState } from "react";
 

@@ -1,13 +1,18 @@
 [data-theme='dark'] {
   --bg-page: url('/img/bg-dark.jpg');
+
   --text: var(--gray-100);
   --text-soft: var(--gray-300);
-  
-  --surface: rgba(25, 25, 40, 0.35);
-  --surface-border: rgba(255, 255, 255, 0.15);
 
-  --accent: var(--red-500);
-  --accent-hover: var(--red-700);
+  --surface: rgba(30, 27, 50, 0.38);
+  --surface-border: rgba(255, 255, 255, 0.16);
+
+  --shadow-glass:
+    0 12px 32px rgba(0, 0, 0, 0.45),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+
+  --accent: var(--purple-300);
+  --accent-hover: var(--purple-500);
 }
 
 [data-theme='light'] .dark {

@@ -1,7 +1,7 @@
 "use client";
 
 import { DEFAULT_LANGUAGE } from "@src/configuration/languages.config";
-import Card from "@src/shared/components/ui/Card";
+import Card from "@src/shared/components/ui/cards/Card";
 import { getPreferredLang } from "@src/utils/language";
 import { useEffect, useState } from "react";
 
