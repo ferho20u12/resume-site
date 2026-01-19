@@ -4,9 +4,9 @@ import { Experience } from "@src/models/experience.model";
 import ExpandableText from "@src/shared/components/text/ExpandableText";
 import HoverCard from "@src/shared/components/ui/cards/HoverCard";
 
-interface ExperienceCardProps { experience: Experience }
+interface ExperienceCardProps { experience: Experience ,  companyLinkTitle : string}
 
-export default function ExperienceCard({ experience }: ExperienceCardProps) {
+export default function ExperienceCard({ experience, companyLinkTitle }: ExperienceCardProps) {
   return (
     <HoverCard className="flex-none w-80 md:w-96">
       <article className="flex flex-col gap-3 p-4 text-(--text)">
@@ -30,7 +30,7 @@ export default function ExperienceCard({ experience }: ExperienceCardProps) {
 
           {experience.companyLink && (
             <a href={experience.companyLink} target="_blank" rel="noreferrer" className="text-xs text-(--accent) hover:text-(--accent-hover) hover:underline">
-              Company site
+              {companyLinkTitle}
             </a>
           )}
         </div>

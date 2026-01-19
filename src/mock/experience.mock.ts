@@ -7,6 +7,11 @@ export enum CompanyId {
   SN = "sn", // SEPTIMO NUMEN
 }
 
+export const COMPANY_LINK_TITLE: Record<string, string> = {
+  es: "Sitio web de la compañía",
+  en: "Company website",
+};
+
 const COMPANIES_LOGOS: Record<CompanyId, string> = {
   [CompanyId.CFE]: "/img/companies/comision-federal-de-electricidad.jpg",
   [CompanyId.ND]:  "/img/companies/nucleo-de-diagnostico.jpg",
