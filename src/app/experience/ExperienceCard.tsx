@@ -3,10 +3,12 @@
 import { Experience } from "@src/models/experience.model";
 import ExpandableText from "@src/shared/components/text/ExpandableText";
 import HoverCard from "@src/shared/components/ui/cards/HoverCard";
+import { formatPeriod } from "@src/shared/utils/date";
 
-interface ExperienceCardProps { experience: Experience ,  companyLinkTitle : string}
+interface ExperienceCardProps { experience: Experience ,  companyLinkTitle : string, currentJobTitle:string}
 
-export default function ExperienceCard({ experience, companyLinkTitle }: ExperienceCardProps) {
+export default function ExperienceCard({ experience, companyLinkTitle, currentJobTitle }: ExperienceCardProps) {
+
   return (
     <HoverCard className="flex-none w-80 md:w-96">
       <article className="flex flex-col gap-3 p-4 text-(--text)">
@@ -24,7 +26,7 @@ export default function ExperienceCard({ experience, companyLinkTitle }: Experie
 
           {experience.startDate && (
             <p className="text-xs text-(--text-soft)">
-              {experience.startDate.toLocaleDateString()} – {experience.endDate ? experience.endDate.toLocaleDateString() : "Present"}
+              {formatPeriod( experience.startDate)} – {experience.endDate ? formatPeriod(experience.endDate) : currentJobTitle}
             </p>
           )}
 
