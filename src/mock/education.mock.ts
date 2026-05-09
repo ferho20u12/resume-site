@@ -139,7 +139,7 @@ export const EDUCATION_DATA: Record<string, Education[]> = {
         endDate: new Date("2026-04-30"),
       },
       description:
-        "Estudios actuales de inglés con énfasis en comprensión lectora, expresión oral y comunicación escrita.",
+        "Formación académica enfocada en el aprendizaje del inglés, con énfasis en comprensión lectora, expresión oral y comunicación escrita.",
     },
   ],
 
@@ -196,8 +196,8 @@ export const EDUCATION_DATA: Record<string, Education[]> = {
         startDate: new Date("2025-10-15"),
         endDate: new Date("2026-04-30"),
       },
-      description:
-        "Currently studying English with a focus on reading, writing, listening, and speaking skills.",
+      description: 
+      "Academic training focused on developing English reading, writing, listening, and speaking skills.",
     },
   ],
 };
